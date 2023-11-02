@@ -10,7 +10,7 @@
 
 <div style="float:right;" class="mt-4 me-4">
     <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Masuk</button></a>
-    <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Daftar</button></a>
+    <a href="register.php"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Daftar</button></a>
 </div>
 
 <div style="clear:both;">
