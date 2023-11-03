@@ -73,7 +73,7 @@
 <body>
     <img src="<?= base_url('assets/img/logo.png') ?>" alt="Logo Kiri" class="logo-left">
     <div class="button">
-    <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
+    <a href="<?= base_url('/') ?>"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
     </div>
     <div class="container">
         <h1>Masuk</h1>
