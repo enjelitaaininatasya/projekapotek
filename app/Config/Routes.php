@@ -9,3 +9,4 @@ use App\Controllers\Home;
 $routes->get('/', [Home::class, 'index']);
 
 $routes->get('/register', [Home::class, 'register']);
+$routes->get('/login', [Home::class, 'login']);
