@@ -10,3 +10,5 @@ $routes->get('/', [Home::class, 'index']);
 
 $routes->get('/register', [Home::class, 'register']);
 $routes->get('/login', [Home::class, 'login']);
+$routes->get('/tambahpesanan', [Home::class, 'tambah pesanan']);
+
