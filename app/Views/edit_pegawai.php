@@ -12,27 +12,33 @@
             text-align: center;
             padding: 50px;
         }
+        .header {
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .header button {
+            margin: 10px;
+            padding: 10px 45px;
+            background-color: #C67C4E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
          .container {
             background-color: #ffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
             width: 450px;
-            position: absolute;
+            position: relative;
             border: 1px solid #ABABAB;
-            top: 50px;
-            right: 200px;
+            top: 70px;
+            
         }
-
         .container h1 {
             margin-bottom: 20px;
-        }
-        .left-image {
-            position: absolute;
-            top: 240px;
-            left: 250px; 
-            width: 520px;
-            height: 380px;;
         }
         .button{
             position: absolute;
@@ -72,36 +78,51 @@
         .left-align {
             text-align: left;
         }
+        .back {
+            position: fixed;
+            bottom: 50px;
+            left: 100px;
+            padding: 10px 30px;
+            background-color: #C67C4E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <img src="assets/img/register.jpg" alt="Gambar Sebelah Kiri" class="left-image">
+<div class="header">
+        <button>Tentang Kami</button>
+        <button>Pemesanan</button>
+        <button>Transaksi</button>
+        <button>L. Keuangan</button>
+        <button style="color: #000;">Pegawai</button>
+        <button>Pelanggan</button>
+        <button>Obat</button>
+    </div>
     <div class="container">
-        <p class="left-align">Selamat Datang !</p>
-        <h1 class="left-align">Daftar</h1>
-        <p class="left-align">APOTEK CITA SEHAT</p>
+        <h1 class="left-align">Ubah Data Pegawai</h1>
+        <p class="left-align">ACS</p>
         <form method="POST">
             <div class="form-group">
-                <label for="name">Nama Pengguna</label>
-                <input type="text" name="name"  placeholder="Masukkan Nama Pengguna" required>
+                <label for="name">Nama</label>
+                <input type="text" name="name"  required>
             </div>
             <div class="form-group">
-                <label for="password">Kata Sandi</label>
-                <input type="password" name="password"  placeholder="Masukkan Kata Sandi" required>
+                <label for="umur">Tanggal Lahir</label>
+                <input type="text" name="umur"  required>
             </div>
             <div class="form-group">
-                <label for="umur">Umur</label>
-                <input type="text" name="umur"  placeholder="Masukkan Umur" required>
+                <label for="password">Password</label>
+                <input type="password" name="password"  required>
             </div>
             <div class="form-group">
-                <label for="telp">Telepon</label>
-                <input type="text" name="telp"  placeholder="Masukkan Nomor Telepon" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" name="register">Mendaftar</button>
+                <button type="submit" name="register">Ubah</button>
             </div>
         </form>
     </div>
+    <a href="obat"><button class="back">Kembali</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -10,3 +10,11 @@ $routes->get('/', [Home::class, 'index']);
 
 $routes->get('/register', [Home::class, 'register']);
 $routes->get('/login', [Home::class, 'login']);
+
+$routes->get('/obat', [Home::class, 'obat']);
+$routes->get('/tambah', [Home::class, 'tambah']);
+$routes->get('/edit', [Home::class, 'edit']);
+
+$routes->get('/pegawai', [Home::class, 'pegawai']);
+$routes->get('/tmbh', [Home::class, 'tmbh']);
+$routes->get('/ubah', [Home::class, 'ubah']);
