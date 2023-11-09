@@ -37,4 +37,9 @@ class ObatModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getObat(){
+        return $this->findAll();    
+    }
 }
+

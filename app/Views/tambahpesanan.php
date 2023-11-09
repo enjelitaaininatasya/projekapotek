@@ -8,30 +8,64 @@
 </head>
 <body>
 
-<div style="float:right;" class="mt-4 me-4">
-    <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
-    <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
-    <a href=""><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
+<ul class="nav justify-content-end" style="margin-top:20px;">
+  <li class="nav-item">
+         <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
+  </li>
+  <li class="nav-item">
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Pemesanan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+  </li>
+</ul>
+
+
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
+    
+<div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
+    <h3>Tambah Pesanan</h3>
+    <h6>ACS</h6>
 </div>
 
-<div style="clear:both;">
-    <div style="float:right; margin-top:70px; margin-right:10px;">
-        <img style="width:520px"src="<?= base_url('assets/img/landingpage.jpg') ?>" alt="">
+<div style="padding-left:23px; padding-right:23px;">
+
+
+    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
+  <input type="date" class="form-control" id="exampleFormControlInput1" >
     </div>
 
-    <div style="background-color:#C67C4E; float:left; width: 59%; border-radius: 0 20px 20px 0; margin-top:50px; padding-bottom:90px;">
-        <table style="margin-top:30px">
-            <tr>
-                <td> <center><img style="width:200px; border-radius:180px" src="<?= base_url('assets/img/logo.png') ?>" alt=""></center></td>
-            </tr>
-            <tr>
-                <td><center><h5 style="margin-top:30px; color:white">APOTEK CITA SEHAT</h5></center></td>
-            </tr>
-            <tr>
-                <td><center><p style="color:white; margin-left:150px; margin-right:150px; text-align:justify">Kami adalah destinasi online Anda untuk semua kebutuhan kesehatan dan obat-obatan. Di Apotek Cita Sehat, kami berkomitmen untuk memberikan informasi kesehatan yang terpercaya dan berkualitas, serta akses mudah untuk mencari, membandingkan, dan membeli berbagai jenis obat, suplemen, dan produk kesehatan lainnya.</p></center></td>
-            </tr>
-        </table>
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Obat</label>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Pilih Obat</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+    </div>
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Jumlah</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" >
+    </div>
+
+  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
+  
+</div>
+
+</div>
+
+    </form>
+
 </div>
 
 
