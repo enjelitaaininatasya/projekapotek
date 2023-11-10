@@ -8,7 +8,9 @@
     <style>
         body {
             font-family: justify, sans-serif;
-            background-color: #Ffff;
+
+            background-color: #ffff;
+
             text-align: center;
             padding: 50px;
         }
@@ -30,9 +32,11 @@
         .left-image {
             position: absolute;
             top: 240px;
+
             left: 250px; 
             width: 520px;
             height: 380px;;
+
         }
         .button{
             position: absolute;
@@ -75,7 +79,16 @@
     </style>
 </head>
 <body>
-    <img src="assets/img/register.jpg" alt="Gambar Sebelah Kiri" class="left-image">
+
+
+    <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
+
+
+    <div class="button">
+    <a href="<?= base_url('/') ?>"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
+    </div>
+
+
     <div class="container">
         <p class="left-align">Selamat Datang !</p>
         <h1 class="left-align">Daftar</h1>
