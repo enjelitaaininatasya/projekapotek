@@ -59,7 +59,6 @@
             line-height: 36px;
             padding: .4rem .65rem;
             text-align: center;
-            width: 600px;
         }
         header li.menu-item a:hover,
         header li.menu-item a:focus {
