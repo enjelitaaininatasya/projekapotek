@@ -18,4 +18,30 @@ class Home extends BaseController
     {
         return view('login');
     }
+    
+    public function obat()
+    {
+        return view('obat');
+    }
+    public function tambah()
+    {
+        return view('tambah_obat');
+    }
+    public function edit()
+    {
+        return view('edit_obat');
+    }
+
+    public function pegawai()
+    {
+        return view('pegawai');
+    }
+    public function tmbh()
+    {
+        return view('tmbh_peg');
+    }
+    public function ubah()
+    {
+        return view('edit_pegawai');
+    }
 }
