@@ -9,6 +9,7 @@
         body {
             font-family: justify, sans-serif;
 
+
             background-color: #ffff;
 
             text-align: center;
@@ -33,9 +34,9 @@
             position: absolute;
             top: 240px;
 
-            left: 250px; 
-            width: 520px;
-            height: 380px;;
+            left: 200px; 
+            width: 510px;
+            height: 360px;;
 
         }
         .button{
