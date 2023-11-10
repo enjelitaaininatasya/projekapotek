@@ -16,4 +16,4 @@ $routes->get('/login', [Home::class, 'login']);
 $routes->get('/tambahpesanan', [PesananController::class, 'create']);
 $routes->post('/konfirmasipesanan', [PesananController::class, 'konfirmasi']);
 $routes->get('/obatpelanggan', [ObatController::class, 'index']);
-
+$routes->get('/view_pemesanan', [PesananController::class, 'data']);
