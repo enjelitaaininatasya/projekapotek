@@ -8,30 +8,31 @@
     <style>
         body {
             font-family: justify, sans-serif;
-            background-color: rgba(198, 124, 78, 0.8);
+            background-color: #ffff;
             text-align: center;
             padding: 50px;
         }
          .container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #ffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            width: 300px;
-            margin: 0 auto;
-            position: relative;
+            width: 450px;
+            position: absolute;
+            border: 1px solid #ABABAB;
+            top: 50px;
+            right: 200px;
         }
 
         .container h1 {
             margin-bottom: 20px;
         }
-        .logo-left {
+        .left-image {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 80px;
-            height: 80px;
-            border-radius: 80%;
+            top: 240px;
+            left: 200px; 
+            width: 510px;
+            height: 360px;;
         }
         .button{
             position: absolute;
@@ -48,49 +49,63 @@
 
         .form-group label {
             display: block;
-            font-weight: bold;
+            font-weight: regular;
         }
 
         .form-group input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #ABABAB;
             border-radius: 4px;
         }
 
         .form-group button {
-            background-color: #007BFF;
+            background-color: #C67C4E;
             color: #fff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
+            width: 390px;
             cursor: pointer;
             transition: transform 0.2s;
+        }
+        .left-align {
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <img src="<?= base_url('assets/img/logo.png') ?>" alt="Logo Kiri" class="logo-left">
+
+    <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
+
+
     <div class="button">
     <a href="<?= base_url('/') ?>"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
     </div>
+
     <div class="container">
-        <h1>Registrasi</h1>
+        <p class="left-align">Selamat Datang !</p>
+        <h1 class="left-align">Daftar</h1>
+        <p class="left-align">APOTEK CITA SEHAT</p>
         <form method="POST">
             <div class="form-group">
-                <label for="name">Nama</label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" required>
+                <label for="name">Nama Pengguna</label>
+                <input type="text" name="name"  placeholder="Masukkan Nama Pengguna" required>
             </div>
             <div class="form-group">
                 <label for="password">Kata Sandi</label>
-                <input type="password" name="password" required>
+                <input type="password" name="password"  placeholder="Masukkan Kata Sandi" required>
             </div>
             <div class="form-group">
-                <button type="submit" name="register">Daftar</button>
+                <label for="umur">Umur</label>
+                <input type="text" name="umur"  placeholder="Masukkan Umur" required>
+            </div>
+            <div class="form-group">
+                <label for="telp">Telepon</label>
+                <input type="text" name="telp"  placeholder="Masukkan Nomor Telepon" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="register">Mendaftar</button>
             </div>
         </form>
     </div>
