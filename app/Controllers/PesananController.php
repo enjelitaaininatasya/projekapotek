@@ -17,4 +17,9 @@ class PesananController extends BaseController
     }
 
 
+    public function data()
+    {
+        return view('view_pemesanan');
+    }
+
 }

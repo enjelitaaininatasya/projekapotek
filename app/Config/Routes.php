@@ -31,11 +31,16 @@ $routes->get('/tambahpesanan', [PesananController::class, 'create']);
 $routes->post('/konfirmasipesanan', [PesananController::class, 'konfirmasi']);
 $routes->get('/obatpelanggan', [ObatController::class, 'index']);
 
+
 $routes->get('/dtp', [DatatransaksipegawaiController::class, 'index']);
 $routes->get('/tambahdtp', [DatatransaksipegawaiController::class, 'create']);
 $routes->post('/savedtp', [DatatransaksipegawaiController::class, 'store']);
 
 $routes->get('/lapkeu', [LaporankeuanganpegawaiController::class, 'index']);
+
+$routes->get('/view_pemesanan', [PesananController::class, 'data']);
+
+
 
 
 
