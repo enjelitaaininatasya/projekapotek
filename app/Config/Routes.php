@@ -40,3 +40,6 @@ $routes->get('/pegawai/tambahlaporankeuangan', [LaporankeuanganController::class
 $routes->post('/pegawai/savelaporankeuangan', [LaporankeuanganController::class, 'storePegawai']);
 $routes->get('/pegawai/pesanan', [PesananController::class, 'indexPegawai']);
 $routes->get('/pegawai/pelanggan', [PelangganController::class, 'indexPegawai']);
+$routes->get('/pegawai/obat', [ObatController::class, 'indexPegawai']);
+$routes->get('/pegawai/tambahobat', [ObatController::class, 'createPegawai']);
+$routes->get('/pegawai/editobat', [ObatController::class, 'editPegawai']);
