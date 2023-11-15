@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<ul class="nav justify-content-end" style="margin-top:20px;">
+<ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
          <a href="<?=base_url('/pegawai/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
@@ -28,7 +28,7 @@
   <li class="nav-item">
         <a href="<?=base_url('/pegawai/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
-</ul>s
+</ul>
 
 
 <div style="display:flex; flex-wrap: wrap;">
@@ -50,7 +50,7 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <button class="btn" style="background-color : #C67C4E; color:white">EDIT</button>
+    <a href="/pegawai/editobat"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
     <button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button>
 </p>
 </center>
@@ -61,6 +61,7 @@
     
 </div>
 
+<a href="/pegawai/tambahobat"><button class="btn" style="background-color : #C67C4E; color:white; margin-left:40px; margin-top: 40px;">TAMBAH</button></a>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
