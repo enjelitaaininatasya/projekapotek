@@ -8,18 +8,19 @@
     <style>
         body {
             font-family: justify, sans-serif;
-            background-color: #Ffff;
+            background-color: #ffff;
             text-align: center;
-            padding: 50px;
+            padding: 10px;
         }
         .header {
             text-align: center;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
         }
         .header button {
             margin: 10px;
-            padding: 10px 45px;
+            margin-top: 0;
+            padding: 5px 35px;
             background-color: #C67C4E;
             color: #fff;
             border: none;
@@ -28,13 +29,13 @@
         }
          .container {
             background-color: #ffff;
-            border-radius: 10px;
+            border-radius: 7px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            width: 450px;
+            width: 400px;
             position: relative;
             border: 1px solid #ABABAB;
-            top: 70px;
+            top: 50px;
             
         }
         .container h1 {
@@ -71,7 +72,7 @@
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            width: 390px;
+            width: 340px;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -79,7 +80,6 @@
             text-align: left;
         }
         .back {
-            position: fixed;
             bottom: 50px;
             left: 100px;
             padding: 10px 30px;

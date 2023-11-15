@@ -15,11 +15,12 @@
         .header {
             text-align: center;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
         }
         .header button {
             margin: 10px;
-            padding: 10px 45px;
+            margin-top: 0;
+            padding: 5px 35px;
             background-color: #C67C4E;
             color: #fff;
             border: none;
@@ -27,20 +28,21 @@
             cursor: pointer;
         }
         .container {
+            margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            gap: 10px;
+            padding: 10px;
         }
         .item {
             background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 10px 5px;
-            width: 205px;
-            min-width: 205px;
-            height: 290px;
-            min-height: 290px;
+            border-radius: 5px;
+            padding: 7px 2px;
+            width: 200px;
+            min-width: 200px;
+            height: 270px;
+            min-height: 270px;
             text-align: center;
             font-weight: bold;
             border: 1px solid #ABABAB;
@@ -59,7 +61,7 @@
         }
 
         .item h2 {
-            margin: 3px 0;
+            margin: 2px 0;
             font-weight: bold;
         }
         .item p {
@@ -68,16 +70,15 @@
         }
         .ubah, .hapus {
             margin: 3px;
-            padding: 5px 12px;
+            padding: 3px 10px;
             background-color: #C67C4E;
             color: #fff;
             border: none;
             border: 1px solid #ABABAB;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
         .tambah {
-            
             bottom: 50px;
             left: 100px;
             padding: 10px 30px;

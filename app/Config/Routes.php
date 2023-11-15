@@ -3,6 +3,7 @@
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Home;
 use App\Controllers\PesananController;
+use App\Controllers\PelangganController;
 use App\Controllers\ObatController;
 use App\Controllers\DatatransaksipegawaiController;
 use App\Controllers\LaporankeuanganpegawaiController;
@@ -40,7 +41,7 @@ $routes->get('/lapkeu', [LaporankeuanganpegawaiController::class, 'index']);
 
 $routes->get('/view_pemesanan', [PesananController::class, 'data']);
 
-
+$routes->get('/view_pelanggan', [PelangganController::class, 'data']);
 
 
 
