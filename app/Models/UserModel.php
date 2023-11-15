@@ -41,4 +41,8 @@ class UserModel extends Model
     public function getPegawai(){
         return $this->where('role', 'pegawai')->findAll();
     }
+
+    public function getPelanggan(){
+        return $this->where('role', 'pelanggan')->findAll();
+    }
 }

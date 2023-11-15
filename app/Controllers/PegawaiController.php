@@ -8,15 +8,24 @@ use App\Models\UserModel;
 class PegawaiController extends BaseController
 {
     public $userModel;
-    public function index()
+    public function indexAdmin()
     {
         $this->userModel = new UserModel();
         $data=[
             'pegawaii'  =>  $this->userModel->getPegawai(),
         ];
 
-        return view('pegawai', $data);
+        return view('admin_pegawai', $data);
     }
 
+    public function edit()
+    {
+        return view('admin_editpegawai');
+    }
+
+    public function create()
+    {
+        return view('admin_tambahpegawai');
+    }
     
 }

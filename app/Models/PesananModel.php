@@ -37,4 +37,10 @@ class PesananModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getPesanan(){
+        return $this->select('pesanan.*, obat.*, user.*')
+        ->join('obat', 'obat.id_obat=pesanan.id_obat')
+        ->join('user', 'user.id=pesanan.id_user')->findAll();    
+    }
 }

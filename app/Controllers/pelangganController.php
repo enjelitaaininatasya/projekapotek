@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\UserModel;
 
 use App\Controllers\BaseController;
 
 class PelangganController extends BaseController
 {
-    public function data()
+    public $userModel;
+    public function indexPegawai()
     {
-        
-        return view('view_pelanggan');
-    }
 
+        $this->userModel = new UserModel();
+        $data = [
+            'pelanggann' => $this->userModel->getPelanggan(),
+        ];
+        return view ("pegawai_pelanggan", $data);
+    }
 }
