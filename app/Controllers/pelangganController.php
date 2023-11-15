@@ -17,4 +17,14 @@ class PelangganController extends BaseController
         ];
         return view ("pegawai_pelanggan", $data);
     }
+
+    public function indexAdmin()
+    {
+
+        $this->userModel = new UserModel();
+        $data = [
+            'pelanggann' => $this->userModel->getPelanggan(),
+        ];
+        return view ("admin_pelanggan", $data);
+    }
 }

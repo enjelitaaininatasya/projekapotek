@@ -24,7 +24,7 @@ class PesananController extends BaseController
         $data = [
             'pesanann' => $this->pesananModel->getPesanan(),
         ];
-        return view ("view_pemesanan", $data);
+        return view ("admin_pesanan", $data);
     }
 
     public function indexPegawai()
