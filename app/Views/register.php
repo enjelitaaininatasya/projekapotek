@@ -19,12 +19,12 @@
             background-color: #ffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 450px;
+            padding: 20px;
+            width: 400px;
             position: absolute;
             border: 1px solid #ABABAB;
             top: 50px;
-            right: 200px;
+            right: 150px;
         }
 
         .container h1 {
@@ -34,9 +34,9 @@
             position: absolute;
             top: 240px;
 
-            left: 200px; 
-            width: 510px;
-            height: 360px;;
+            left: 100px; 
+            width: 500px;
+            height: 350px;;
 
         }
         .button{
@@ -61,7 +61,7 @@
             width: 100%;
             padding: 10px;
             border: 1px solid #ABABAB;
-            border-radius: 4px;
+            border-radius: 3px;
         }
 
         .form-group button {
@@ -70,7 +70,7 @@
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            width: 390px;
+            width: 357px;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -83,11 +83,6 @@
 
 
     <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
-
-
-    <div class="button">
-    <a href="<?= base_url('/') ?>"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
-    </div>
 
 
     <div class="container">
