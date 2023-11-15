@@ -52,7 +52,7 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <button class="btn" style="background-color : #C67C4E; color:white">EDIT</button>
+    <a href="/admin/editobat"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
     <button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button>
 </p>
 </center>
@@ -63,6 +63,7 @@
     
 </div>
 
+<a href="/admin/tambahobat"><button class="btn" style="background-color : #C67C4E; color:white; margin-left:40px; margin-top: 40px;">TAMBAH</button></a>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
