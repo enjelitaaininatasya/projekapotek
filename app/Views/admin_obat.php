@@ -52,7 +52,7 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <a href="/admin/editobat"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+    <a href="<?=base_url('/admin/editobat')?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
     <button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button>
 </p>
 </center>
