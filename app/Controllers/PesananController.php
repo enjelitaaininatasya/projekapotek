@@ -1,26 +1,40 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\PesananModel;
 use App\Controllers\BaseController;
 
 class PesananController extends BaseController
 {
     public function create()
     {
-        return view('tambahpesanan');
+        return view('pelanggan_tambahpesanan');
     }
     
     public function konfirmasi()
     {
-        return view('konfirmasipesanan');
+        return view('pelanggan_konfirmasipesanan');
     }
 
-
-    public function data()
+    public $pesananModel;
+    public function indexAdmin()
     {
-        
-        return view('view_pemesanan');
+
+        $this->pesananModel = new PesananModel();
+        $data = [
+            'pesanann' => $this->pesananModel->getPesanan(),
+        ];
+        return view ("view_pemesanan", $data);
+    }
+
+    public function indexPegawai()
+    {
+
+        $this->pesananModel = new PesananModel();
+        $data = [
+            'pesanann' => $this->pesananModel->getPesanan(),
+        ];
+        return view ("pegawai_pesanan", $data);
     }
 
 }

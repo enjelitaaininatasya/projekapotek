@@ -21,9 +21,6 @@
         <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
   </li>
   <li class="nav-item">
-        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pegawai</button></a>
-  </li>
-  <li class="nav-item">
         <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
   </li>
   <li class="nav-item">
@@ -47,6 +44,25 @@
       <th scope="col">Harga</th>
     </tr>
   </thead>
+  <tbody>
+<?php
+foreach ($pesanann as $pesanan){
+    ?>
+    
+    <tr>
+      
+      <td><?=$pesanan['id_pesanan']?></td>
+      <td><?=$pesanan['tanggal']?></td>
+      <td><?=$pesanan['nama']?></td>
+      <td><?=$pesanan['nama_obat']?></td>
+      <td><?=$pesanan['jumlah']?></td>
+      <td><?=$pesanan['harga']?></td>
+    </tr>
+    <?php
+}
+?>
+    
+  </tbody>
 </table>
 </div>
 
