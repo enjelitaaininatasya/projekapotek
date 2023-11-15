@@ -37,4 +37,24 @@ class ObatController extends BaseController
     {
         return view('admin_tambahobat');
     }
+
+    public function indexPegawai()
+    {
+
+        $this->obatModel = new ObatModel();
+        $data = [
+            'obats' => $this->obatModel->getObat(),
+        ];
+        return view ("pegawai_obat", $data);
+    }
+
+    public function editPegawai()
+    {
+        return view('pegawai_editobat');
+    }
+
+    public function createPegawai()
+    {
+        return view('pegawai_tambahobat');
+    }
 }
