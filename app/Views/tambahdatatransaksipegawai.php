@@ -13,10 +13,19 @@
          <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
-        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Pemesanan</button></a>
+        <a href="<?=base_url('/tambahpesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
   </li>
   <li class="nav-item">
-        <a href="<?=base_url('/obatpelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Transaksi</button></a>
+  </li>
+  <li class="nav-item">
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
   </li>
 </ul>
 
@@ -24,14 +33,14 @@
 <div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
     
 <div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
-    <h3>Tambah Pesanan</h3>
+    <h3>Tambah Data Transaksi</h3>
     <h6>ACS</h6>
 </div>
 
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
+    <form action="<?= base_url('/savedtp')?>" method="POST">
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
@@ -69,8 +78,9 @@
 </div>
 
 
+<a href="<?= base_url('/')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Kembali</button></a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
-
 

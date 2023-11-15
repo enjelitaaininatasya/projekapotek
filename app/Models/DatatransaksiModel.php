@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ObatModel extends Model
+class DatatransaksiModel extends Model
 {
-    protected $table            = 'obat';
+    protected $table            = 'datatransaksi';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_obat','tipe_obat','harga_obat','foto'];
+    protected $allowedFields    = ['id_pesanan', 'tanggal'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,8 +38,11 @@ class ObatModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getObat(){
-        return $this->findAll();    
+    public function getData(){
+        return $this->select('datatransaksi.*, pesanan.*, obat.*, user.*')
+        ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
+        ->join('obat', 'obat.id_obat=pesanan.id_obat')
+        ->join('user', 'user.id=pesanan.id_user')->findAll();    
     }
 }
 
