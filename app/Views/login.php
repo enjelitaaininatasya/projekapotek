@@ -18,6 +18,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
             width: 450px;
+            height: 550px;
             position: absolute;
             border: 1px solid #ABABAB;
             top: 50px;
@@ -50,6 +51,7 @@
         .form-group label {
             display: block;
             font-weight: regular;
+            margin-top: 30px;
         }
 
         .form-group input {
@@ -68,6 +70,7 @@
             width: 390px;
             cursor: pointer;
             transition: transform 0.2s;
+            margin-top: 70px;
         }
         .left-align {
             text-align: left;
@@ -77,11 +80,6 @@
 <body>
 
     <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
-
-
-    <div class="button">
-    <a href="<?= base_url('/') ?>"><button type="button" class="btn" style="padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Home</button></a>
-    </div>
 
     <div class="container">
         <p class="left-align">Selamat Datang !</p>

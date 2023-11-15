@@ -15,7 +15,7 @@ class DatatransaksiController extends BaseController
         $data = [
             'dataa' => $this->datatransaksiModel->getData(),
         ];
-        return view ("pegawai_datatransaksi", $data);
+        return view ("admin_datatransaksi", $data);
     }
 
     public function indexPegawai()
@@ -31,6 +31,11 @@ class DatatransaksiController extends BaseController
     public function createPegawai()
     {
         return view('pegawai_tambahdatatransaksi');
+    }
+
+    public function createAdmin()
+    {
+        return view('admin_tambahdatatransaksi');
     }
 
     public function storePegawai()

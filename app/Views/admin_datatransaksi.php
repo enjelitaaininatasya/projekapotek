@@ -33,57 +33,48 @@
 </ul>
 
 
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px">
+
+<center><h1>Data Transaksi</h1></center>
+
+<table style="margin-top:50px" class="table">
+<thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Tanggal</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Obat</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">Harga</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<?php
+foreach ($dataa as $data){
+    ?>
     
-<div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
-    <h3>Edit Obat</h3>
-    <h6>ACS</h6>
-</div>
-
-<div style="padding-left:23px; padding-right:23px;">
-
-
-    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
-
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tipe Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Harga</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Foto</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>
-  
-</div>
+    <tr>
+      
+      <td><?=$data['id_datatransaksi']?></td>
+      <td><?=$data['tanggal']?></td>
+      <td><?=$data['nama']?></td>
+      <td><?=$data['nama_obat']?></td>
+      <td><?=$data['jumlah']?></td>
+      <td><?=$data['harga']?></td>
+    </tr>
+    <?php
+}
+?>
+    
+  </tbody>
+</table>
 
 </div>
 
-    </form>
-
-</div>
-
+<a href="<?= base_url('/')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Tambah</button></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
-
 

@@ -17,9 +17,23 @@ class LaporankeuanganController extends BaseController
         return view ("pegawai_laporankeuangan", $data);
     }
 
+    public function indexAdmin()
+    {
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+        $data = [
+            'laporann' => $this->laporankeuanganModel->getLaporan(),
+        ];
+        return view ("admin_laporankeuangan", $data);
+    }
+
     public function createPegawai()
     {
         return view('pegawai_tambahlaporankeuangan');
+    }
+
+    public function createAdmin()
+    {
+        return view('admin_tambahlaporankeuangan');
     }
 
     public function storePegawai()

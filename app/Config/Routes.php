@@ -30,6 +30,12 @@ $routes->get('/admin/editobat', [ObatController::class, 'edit']);
 $routes->get('/admin/pegawai', [PegawaiController::class, 'indexAdmin']);
 $routes->get('/admin/tambahpegawai', [PegawaiController::class, 'create']);
 $routes->get('/admin/editpegawai', [PegawaiController::class, 'edit']);
+$routes->get('/admin/pesanan', [PesananController::class, 'indexAdmin']);
+$routes->get('/admin/pelanggan', [PelangganController::class, 'indexAdmin']);
+$routes->get('/admin/datatransaksi', [DatatransaksiController::class, 'indexAdmin']);
+$routes->get('/admin/tambahdatatransaksi', [DatatransaksiController::class, 'createAdmin']);
+$routes->get('/admin/laporankeuangan', [LaporankeuanganController::class, 'indexAdmin']);
+$routes->get('/admin/tambahlaporankeuangan', [LaporankeuanganController::class, 'createAdmin']);
 
 $routes->get('/pegawai/aboutus', [Home::class, 'aboutuspegawai']);
 $routes->get('/pegawai/datatransaksi', [DatatransaksiController::class, 'indexpegawai']);

@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
          <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
@@ -32,58 +31,46 @@
   </li>
 </ul>
 
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px">
 
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
+<center><h1>Pemesanan</h1></center>
+
+<table style="margin-top:50px" class="table">
+<thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Tanggal</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Obat</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">Harga</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php
+foreach ($pesanann as $pesanan){
+    ?>
     
-<div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
-    <h3>Edit Obat</h3>
-    <h6>ACS</h6>
+    <tr>
+      
+      <td><?=$pesanan['id_pesanan']?></td>
+      <td><?=$pesanan['tanggal']?></td>
+      <td><?=$pesanan['nama']?></td>
+      <td><?=$pesanan['nama_obat']?></td>
+      <td><?=$pesanan['jumlah']?></td>
+      <td><?=$pesanan['harga']?></td>
+    </tr>
+    <?php
+}
+?>
+    
+  </tbody>
+</table>
 </div>
 
-<div style="padding-left:23px; padding-right:23px;">
-
-
-    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
-
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tipe Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Harga</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Foto</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>
-  
-</div>
-
-</div>
-
-    </form>
-
-</div>
-
+<a href="<?= base_url('/')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Tambah</button></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
-
 
