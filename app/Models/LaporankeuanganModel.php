@@ -12,7 +12,7 @@ class LaporankeuanganModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_laporan','tanggal','pemasukan','total'];
+    protected $allowedFields    = ['tanggal','pemasukan','total'];
 
     // Dates
     protected $useTimestamps = true;
@@ -37,4 +37,8 @@ class LaporankeuanganModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getLaporan(){
+        return $this->findAll();    
+    }
 }

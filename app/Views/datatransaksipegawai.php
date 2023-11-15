@@ -16,13 +16,10 @@
         <a href="<?=base_url('/tambahpesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
   </li>
   <li class="nav-item">
-        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Transaksi</button></a>
+        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Transaksi</button></a>
   </li>
   <li class="nav-item">
         <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
-  </li>
-  <li class="nav-item">
-        <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Pegawai</button></a>
   </li>
   <li class="nav-item">
         <a href=""><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
@@ -35,29 +32,33 @@
 
 <div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px">
 
-<center><h1>Pegawai</h1></center>
+<center><h1>Data Transaksi</h1></center>
 
 <table style="margin-top:50px" class="table">
 <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Tanggal</th>
       <th scope="col">Nama</th>
-      <th scope="col">Umur</th>
-      <th scope="col">Telepon</th>
+      <th scope="col">Obat</th>
+      <th scope="col">Jumlah</th>
+      <th scope="col">Harga</th>
     </tr>
   </thead>
 
   <tbody>
 <?php
-foreach ($pegawaii as $pegawai){
+foreach ($dataa as $data){
     ?>
     
     <tr>
       
-      <td><?=$pegawai['id']?></td>
-      <td><?=$pegawai['nama']?></td>
-      <td><?=$pegawai['umur']?></td>
-      <td><?=$pegawai['telepon']?></td>
+      <td><?=$data['id_datatransaksi']?></td>
+      <td><?=$data['tanggal']?></td>
+      <td><?=$data['nama']?></td>
+      <td><?=$data['nama_obat']?></td>
+      <td><?=$data['jumlah']?></td>
+      <td><?=$data['harga']?></td>
     </tr>
     <?php
 }

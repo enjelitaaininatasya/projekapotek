@@ -12,7 +12,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id','nama','katasandi','umur','telepon','role'];
+    protected $allowedFields    = ['nama','katasandi','umur','telepon','role'];
 
     // Dates
     protected $useTimestamps = true;
@@ -37,4 +37,8 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getPegawai(){
+        return $this->where('role', 'pegawai')->findAll();
+    }
 }

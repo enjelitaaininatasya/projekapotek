@@ -16,8 +16,10 @@ class PesananController extends BaseController
         return view('konfirmasipesanan');
     }
 
+
     public function data()
     {
         return view('view_pemesanan');
     }
+
 }

@@ -77,7 +77,7 @@
             cursor: pointer;
         }
         .tambah {
-            position: fixed;
+            
             bottom: 50px;
             left: 100px;
             padding: 10px 30px;
