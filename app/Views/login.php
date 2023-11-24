@@ -17,8 +17,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            width: 450px;
-            height: 550px;
+            width: 400px;
             position: absolute;
             border: 1px solid #ABABAB;
             top: 50px;
@@ -49,7 +48,7 @@
         }
 
         .form-group label {
-            display: block;
+           display: block;
             font-weight: regular;
             margin-top: 30px;
         }
@@ -65,12 +64,13 @@
             background-color: #C67C4E;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 10px;
             border-radius: 5px;
-            width: 390px;
+            width: 350px;
             cursor: pointer;
             transition: transform 0.2s;
-            margin-top: 70px;
+            margin-top: 20px;
+            margin-right: 70px;
         }
         .left-align {
             text-align: left;
@@ -85,15 +85,41 @@
         <p class="left-align">Selamat Datang !</p>
         <h1 class="left-align">Masuk</h1>
         <p class="left-align">APOTEK CITA SEHAT</p>
-        <form method="POST">
+
+        <?= view('Myth\Auth\Views\_message_block') ?>
+        <form action="<?= url_to('login') ?>" method="post">
+			<?= csrf_field() ?>
             <div class="form-group">
-                <label for="name">Nama Pengguna</label>
-                <input type="text" name="name"  placeholder="Masukkan Nama Pengguna" required>
+                <label for="name">Email</label>
+                <input type="text" name="login"  class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Nama Pengguna" required>
+                    <div class="invalid-feedback">
+								<?= session('errors.login') ?>
+							</div>
             </div>
+
+            <div class="form-group">
+                <label for="password">Nama Pengguna</label>
+                <input type="text" name="login" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" required>
+                    <div class="invalid-feedback">
+								<?= session('errors.login') ?>
+							</div>
+            </div>
+
             <div class="form-group">
                 <label for="password">Kata Sandi</label>
-                <input type="password" name="password"  placeholder="Masukkan Kata Sandi" required>
+                <input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" required>
+                    <div class="invalid-feedback">
+								<?= session('errors.password') ?>
+							</div>
             </div>
+
+            <div class="form-check">
+                <input class="form-check-input" <?php if (old('remember')) : ?> checked <?php endif ?> type="checkbox" value="" id="flexCheckDefault" name="remember">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Ingat Saya!
+                </label>
+            </div>
+
             <div class="form-group">
                 <button type="submit" name="register">Masuk</button>
             </div>

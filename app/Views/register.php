@@ -89,14 +89,24 @@
         <p class="left-align">Selamat Datang !</p>
         <h1 class="left-align">Daftar</h1>
         <p class="left-align">APOTEK CITA SEHAT</p>
-        <form method="POST">
+        <?= view('Myth\Auth\Views\_message_block') ?>
+        <form action="<?= url_to('register') ?>" method="post">
+            <?= csrf_field() ?>
+            <div class="form-group">
+                <label for="name">Email</label>
+                <input value="<?= old('email') ?>" type="text" name="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"   placeholder="Masukkan Email Anda" required>
+            </div>
             <div class="form-group">
                 <label for="name">Nama Pengguna</label>
-                <input type="text" name="name"  placeholder="Masukkan Nama Pengguna" required>
+                <input value="<?= old('username') ?>" type="text" name="username" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>"   placeholder="Masukkan Nama Pengguna" required>
             </div>
             <div class="form-group">
                 <label for="password">Kata Sandi</label>
-                <input type="password" name="password"  placeholder="Masukkan Kata Sandi" required>
+                <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Konfirmasi Kata Sandi</label>
+                <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="Konfirmasi Kata Sandi" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="umur">Umur</label>
@@ -104,7 +114,7 @@
             </div>
             <div class="form-group">
                 <label for="telp">Telepon</label>
-                <input type="text" name="telp"  placeholder="Masukkan Nomor Telepon" required>
+                <input type="text" name="telepon"  placeholder="Masukkan Nomor Telepon" required>
             </div>
             <div class="form-group">
                 <button type="submit" name="register">Mendaftar</button>
