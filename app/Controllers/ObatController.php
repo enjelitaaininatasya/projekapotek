@@ -71,9 +71,9 @@ class ObatController extends BaseController
         $foto = $this->request->getFile('foto');
     
         $data = [
-            'nama_obat' => $this->request->getVar('nama_obat'),
+            'nama_obat' => $this->request->getVar('nama'),
             'tipe_obat' => $this->request->getVar('tipe_obat'),
-            'harga_obat' => $this->request->getVar('harga_obat'),
+            'harga_obat' => $this->request->getVar('harga'),
         ];
     
         if ($foto->isValid()) {
@@ -193,9 +193,9 @@ class ObatController extends BaseController
         $foto = $this->request->getFile('foto');
     
         $data = [
-            'nama_obat' => $this->request->getVar('nama_obat'),
+            'nama_obat' => $this->request->getVar('nama'),
             'tipe_obat' => $this->request->getVar('tipe_obat'),
-            'harga_obat' => $this->request->getVar('harga_obat'),
+            'harga_obat' => $this->request->getVar('harga'),
         ];
     
         if ($foto->isValid()) {
