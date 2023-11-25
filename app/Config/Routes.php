@@ -48,22 +48,25 @@ $routes->get('/login', [Home::class, 'login']);
 
 $routes->get('/pelanggan/aboutus', [Home::class, 'aboutuspelanggan'], ['filter' => 'role:pelanggan']);
 $routes->get('/pelanggan/obat', [ObatController::class, 'indexPelanggan'], ['filter' => 'role:pelanggan']);
-$routes->get('/pelanggan/tambahpesanan', [PesananController::class, 'create'],['filter' => 'role:pelanggan']);
-$routes->post('/pelanggan/konfirmasipesanan', [PesananController::class, 'konfirmasi'],['filter' => 'role:pelanggan']);
+$routes->get('/pelanggan/tambahpesanan', [PesananController::class, 'create'], ['filter' => 'role:pelanggan']);
+$routes->post('/pelanggan/konfirmasipesanan', [PesananController::class, 'konfirmasi'], ['filter' => 'role:pelanggan']);
 
 $routes->get('/admin/aboutus', [Home::class, 'aboutusadmin'], ['filter' => 'role:admin']);
 $routes->get('/admin/obat', [ObatController::class, 'indexAdmin'], ['filter' => 'role:admin']);
 $routes->get('/admin/tambahobat', [ObatController::class, 'createAdmin'], ['filter' => 'role:admin']);
-$routes->get('/admin/editobat', [ObatController::class, 'edit'], ['filter' => 'role:admin']);
+$routes->delete('/admin/delete/(:any)', [ObatController::class, 'delete' ], ['filter' => 'role:admin']);
+$routes->put('/admin/editobat/(:any)', [ObatController::class, 'update' ], ['filter' => 'role:admin']);
+$routes->post('/admin/stores', [ObatController::class, 'stores'], ['filter' => 'role:admin']);
+$routes->get('/admin/editobat/(:any)', [ObatController::class, 'edit' ], ['filter' => 'role:admin']);
 $routes->get('/admin/pegawai', [PegawaiController::class, 'indexAdmin'], ['filter' => 'role:admin']);
-$routes->get('/admin/tambahpegawai', [PegawaiController::class, 'create'],['filter' => 'role:admin']);
-$routes->get('/admin/editpegawai', [PegawaiController::class, 'edit'],['filter' => 'role:admin']);
-$routes->get('/admin/pesanan', [PesananController::class, 'indexAdmin'],['filter' => 'role:admin']);
-$routes->get('/admin/pelanggan', [PelangganController::class, 'indexAdmin'],['filter' => 'role:admin']);
-$routes->get('/admin/datatransaksi', [DatatransaksiController::class, 'indexAdmin'],['filter' => 'role:admin']);
-$routes->get('/admin/tambahdatatransaksi', [DatatransaksiController::class, 'createAdmin'],['filter' => 'role:admin']);
-$routes->get('/admin/laporankeuangan', [LaporankeuanganController::class, 'indexAdmin'],['filter' => 'role:admin']);
-$routes->get('/admin/tambahlaporankeuangan', [LaporankeuanganController::class, 'createAdmin'],['filter' => 'role:admin']);
+$routes->get('/admin/tambahpegawai', [PegawaiController::class, 'create'], ['filter' => 'role:admin']);
+$routes->get('/admin/editpegawai', [PegawaiController::class, 'edit'], ['filter' => 'role:admin']);
+$routes->get('/admin/pesanan', [PesananController::class, 'indexAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/pelanggan', [PelangganController::class, 'indexAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/datatransaksi', [DatatransaksiController::class, 'indexAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/tambahdatatransaksi', [DatatransaksiController::class, 'createAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/laporankeuangan', [LaporankeuanganController::class, 'indexAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/tambahlaporankeuangan', [LaporankeuanganController::class, 'createAdmin'], ['filter' => 'role:admin']);
 
 $routes->get('/pegawai/aboutus', [Home::class, 'aboutuspegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/datatransaksi', [DatatransaksiController::class, 'indexpegawai'], ['filter' => 'role:pegawai']);
@@ -76,4 +79,7 @@ $routes->get('/pegawai/pesanan', [PesananController::class, 'indexPegawai'], ['f
 $routes->get('/pegawai/pelanggan', [PelangganController::class, 'indexPegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/obat', [ObatController::class, 'indexPegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/tambahobat', [ObatController::class, 'createPegawai'], ['filter' => 'role:pegawai']);
-$routes->get('/pegawai/editobat', [ObatController::class, 'editPegawai'], ['filter' => 'role:pegawai']);
+$routes->delete('/pegawai/delete/(:any)', [ObatController::class, 'destroy' ], ['filter' => 'role:pegawai']);
+$routes->put('/pegawai/editobat/(:any)', [ObatController::class, 'updatePegawai' ], ['filter' => 'role:pegawai']);
+$routes->post('/pegawai/store', [ObatController::class, 'store'], ['filter' => 'role:pegawai']);
+$routes->get('/pegawai/editobat/(:any)', [ObatController::class, 'editPegawai' ], ['filter' => 'role:pegawai']);

@@ -41,38 +41,35 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/')?>" method="POST">
+    <form action="<?= base_url('/pegawai/store')?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="mb-1">
+                <label for="nama" style="font-size:14px" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama_obat" name="nama_obat">
+            </div>
 
+            <div class="mb-1">
+                <label for="tipe_obat" style="font-size:14px" class="form-label">Tipe Obat</label>
+                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat">
+                    <option value="Kapsul">Kapsul</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Sirup">Sirup</option>
+                </select>
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
+            <div class="mb-1">
+                <label for="harga" style="font-size:14px" class="form-label">Harga</label>
+                <input type="text" class="form-control"  id="harga_obat" name="harga_obat">
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tipe Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
-    </div>
+            <div class="mb-1">
+                <label for="foto" style="font-size:14px" class="form-label">Foto</label>
+                <input type="file" class="form-control" id="foto" name="foto">
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Harga</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Foto</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
+              <button type="submit" value="Simpan" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
   
 </div>
-
 </div>
 
     </form>

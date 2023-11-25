@@ -50,8 +50,12 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <a href="/pegawai/editobat"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
-    <button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button>
+    <a href="<?= base_url('/pegawai/editobat/' . $obat['id_obat']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+    <form action="<?= base_url('pegawai/delete/' . $obat['id_obat']) ?>" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn" style="background-color : #C67C4E; color:white">DELETE</button>
+                </form>
 </p>
 </center>
 </div>

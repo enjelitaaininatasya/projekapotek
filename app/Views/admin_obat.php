@@ -10,7 +10,7 @@
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
-         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
+         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
@@ -20,15 +20,11 @@
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/admin/pegawai')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pegawai</button></a>
-  </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
   </li>
   <li class="nav-item">
-        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
 </ul>
 
@@ -52,8 +48,12 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <a href="<?=base_url('/admin/editobat')?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
-    <button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button>
+    <a href="<?= base_url('/admin/editobat/' . $obat['id_obat']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+    <form action="<?= base_url('admin/delete/' . $obat['id_obat']) ?>" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn" style="background-color : #C67C4E; color:white">DELETE</button>
+                </form>
 </p>
 </center>
 </div>

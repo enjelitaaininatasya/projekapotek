@@ -10,7 +10,7 @@
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
-         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
+         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
@@ -28,7 +28,7 @@
         <a href="<?=base_url('/admin/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
   </li>
   <li class="nav-item">
-        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
 </ul>
 
@@ -43,38 +43,39 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
+<form action="<?= base_url('/admin/editobat/' . $obat['id_obat']) ?>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+            <div class="mb-1">
+            <?= csrf_field() ?>
+                <label for="nama" style="font-size:14px" class="form-label">Nama</label>
+                <input type="text" class="form-control" value="<?= $obat['nama_obat'] ?>" id="nama" name="nama">
+            </div>
 
+            <div class="mb-1">
+                <label for="tipe_obat" style="font-size:14px" class="form-label">Tipe Obat</label>
+                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat">
+                    <option value="Kapsul">Kapsul</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Sirup">Sirup</option>
+                </select>
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+            <div class="mb-1">
+                <label for="harga" style="font-size:14px" class="form-label">Harga</label>
+                <input type="text" class="form-control" value="<?= $obat['harga_obat'] ?>" id="harga" name="harga">
+            </div>
+
+            <div class="mb-1">
+                <label for="foto" style="font-size:14px" class="form-label">Foto</label>
+                <img src="<?= $obat['foto'] ?? '<default-foto>' ?>">
+                <input type="file" class="form-control" id="foto" name="foto">
+            </div>
+
+            <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>
+        </form>
+      
     </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tipe Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Harga</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Foto</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>
-  
 </div>
-
 </div>
 
     </form>

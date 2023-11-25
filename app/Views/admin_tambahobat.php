@@ -10,7 +10,8 @@
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
-         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
+
+         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
@@ -21,14 +22,18 @@
   <li class="nav-item">
         <a href="<?=base_url('/admin/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
   </li>
+
   <li class="nav-item">
         <a href="<?=base_url('/admin/pegawai')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pegawai</button></a>
+
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
   </li>
   <li class="nav-item">
-        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+
+        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
+
   </li>
 </ul>
 
@@ -44,35 +49,34 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/')?>" method="POST">
 
+    <form action="<?= base_url('/admin/stores')?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="mb-1">
+                <label for="nama" style="font-size:14px" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama_obat" name="nama_obat">
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
+            <div class="mb-1">
+                <label for="tipe_obat" style="font-size:14px" class="form-label">Tipe Obat</label>
+                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat">
+                    <option value="Kapsul">Kapsul</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Sirup">Sirup</option>
+                </select>
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tipe Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
-    </div>
+            <div class="mb-1">
+                <label for="harga" style="font-size:14px" class="form-label">Harga</label>
+                <input type="text" class="form-control"  id="harga_obat" name="harga_obat">
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Harga</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
+            <div class="mb-1">
+                <label for="foto" style="font-size:14px" class="form-label">Foto</label>
+                <input type="file" class="form-control" id="foto" name="foto">
+            </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Foto</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
+              <button type="submit" value="Simpan" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
   
 </div>
 
@@ -81,7 +85,9 @@
     </form>
 
 </div>
+
 <a href="<?= base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Kembali</button></a>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
