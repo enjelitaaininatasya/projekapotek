@@ -10,6 +10,7 @@
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
+
          <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
@@ -21,14 +22,21 @@
   <li class="nav-item">
         <a href="<?=base_url('/admin/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
   </li>
+
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/pegawai')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pegawai</button></a>
+
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/admin/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
   </li>
   <li class="nav-item">
+
         <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
+
   </li>
 </ul>
+
 
 
 <div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
@@ -39,6 +47,7 @@
 </div>
 
 <div style="padding-left:23px; padding-right:23px;">
+
 
 
     <form action="<?= base_url('/admin/stores')?>" method="POST" enctype="multipart/form-data">
@@ -70,11 +79,14 @@
               <button type="submit" value="Simpan" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
   
 </div>
+
 </div>
 
     </form>
 
 </div>
+
+<a href="<?= base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Kembali</button></a>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

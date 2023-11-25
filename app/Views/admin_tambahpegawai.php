@@ -3,126 +3,79 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Halaman Register</title>
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        body {
-            font-family: justify, sans-serif;
-            background-color: #ffff;
-            text-align: center;
-            padding: 10px;
-        }
-        .header {
-            text-align: center;
-            align-items: center;
-            padding: 10px;
-        }
-        .header button {
-            margin: 10px;
-            margin-top: 0;
-            padding: 5px 35px;
-            background-color: #C67C4E;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-         .container {
-            background-color: #ffff;
-            border-radius: 7px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 400px;
-            position: relative;
-            border: 1px solid #ABABAB;
-            top: 50px;
-            
-        }
-        .container h2 {
-            margin-bottom: 16px;
-        }
-        .button{
-            position: absolute;
-            top: 10px;
-            right: 70px;
-            width: 80px;
-            height: 80px;
-           
-        }
-        .form-group {
-            text-align: left;
-            margin-bottom: 10px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: regular;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ABABAB;
-            border-radius: 4px;
-        }
-
-        .form-group button {
-            background-color: #C67C4E;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            width: 340px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .left-align {
-            text-align: left;
-        }
-        .back {
-            bottom: 50px;
-            left: 100px;
-            padding: 10px 30px;
-            background-color: #C67C4E;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-<div class="header">
-        <button>Tentang Kami</button>
-        <button>Pemesanan</button>
-        <button>Transaksi</button>
-        <button>L. Keuangan</button>
-        <button style="color: #000;">Pegawai</button>
-        <button>Pelanggan</button>
-        <button>Obat</button>
+
+<ul class="nav justify-content-center" style="margin-top:20px;">
+  <li class="nav-item">
+         <a href="<?=base_url('/admin/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/datatransaksi')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Transaksi</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/pegawai')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pegawai</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
+  </li>
+  <li class="nav-item">
+        <a href="<?=base_url('/admin/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
+  </li>
+</ul>
+
+
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
+    
+<div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
+    <h3>Tambah Pegawai</h3>
+    <h6>ACS</h6>
+</div>
+
+<div style="padding-left:23px; padding-right:23px;">
+
+
+    <form action="<?= base_url('/pegawai/savelaporankeuangan')?>" method="POST">
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
-    <div class="container">
-        <h1 class="left-align">Tambah Pegawai</h1>
-        <p class="left-align">ACS</p>
-        <form method="POST">
-            <div class="form-group">
-                <label for="name">Nama</label>
-                <input type="text" name="name"  required>
-            </div>
-            <div class="form-group">
-                <label for="umur">Tanggal Lahir</label>
-                <input type="text" name="umur"  required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password"  required>
-            </div>
-            <div class="form-group">
-                <button type="submit" name="register">Tambah</button>
-            </div>
-        </form>
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal Lahir</label>
+  <input type="date" class="form-control" id="exampleFormControlInput1" >
     </div>
-    <a href="<?= base_url('/admin/pegawai')?>"><button class="back">Kembali</button></a>
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Password</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" >
+    </div>
+
+
+    
+  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
+  
+</div>
+
+</div>
+
+    </form>
+
+</div>
+
+
+<a href="<?= base_url('/admin/pegawai')?>"><button type="button" class="btn" style="margin-top:35px; margin-left:57px; border-radius:6px; padding-left:20px; padding-right:20px; background-color : #C67C4E; color:white">Kembali</button></a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
+
