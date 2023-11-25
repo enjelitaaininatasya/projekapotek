@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class ObatModel extends Model
 {
     protected $table            = 'obat';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_obat';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
@@ -38,8 +38,25 @@ class ObatModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getObat(){
+    public function getObat($id = null){
+        if ($id != null)
+        {
+            return $this->find($id);
+        }
         return $this->findAll();    
+    }
+    public function saveObat($data)
+    {
+        $this->insert($data);
+    }
+    public function updateObat($data, $id)
+    {
+        return $this->update($id, $data);
+    }
+   
+    public function deleteObat($id){
+        
+        return $this->delete($id);
     }
 }
 
