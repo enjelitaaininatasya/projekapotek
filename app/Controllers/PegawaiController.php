@@ -3,16 +3,16 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel;
+use App\Models\UsersModel;
 
 class PegawaiController extends BaseController
 {
-    public $userModel;
+    public $usersModel;
     public function indexAdmin()
     {
-        $this->userModel = new UserModel();
+        $this->usersModel = new UsersModel();
         $data=[
-            'pegawaii'  =>  $this->userModel->getPegawai(),
+            'pegawaii'  =>  $this->usersModel->getPegawai(),
         ];
 
         return view('admin_pegawai', $data);

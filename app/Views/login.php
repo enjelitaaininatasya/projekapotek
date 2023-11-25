@@ -113,12 +113,7 @@
 							</div>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" <?php if (old('remember')) : ?> checked <?php endif ?> type="checkbox" value="" id="flexCheckDefault" name="remember">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Ingat Saya!
-                </label>
-            </div>
+            
 
             <div class="form-group">
                 <button type="submit" name="register">Masuk</button>
