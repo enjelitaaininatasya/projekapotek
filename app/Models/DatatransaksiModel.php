@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class DatatransaksiModel extends Model
 {
     protected $table            = 'datatransaksi';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_datatransaksi';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
@@ -38,11 +38,31 @@ class DatatransaksiModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getData(){
-        return $this->select('datatransaksi.*, pesanan.*, obat.*, user.*')
+
+    public function saveData($data){
+        $this->insert($data);
+    }
+
+    public function getData($id = null){
+        if($id==!null){
+            return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, user.*')
         ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
-        ->join('user', 'user.id=pesanan.id_user')->findAll();    
+        ->join('user', 'user.id=pesanan.id_user')->find($id); 
+        }
+        return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, user.*')
+        ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
+        ->join('obat', 'obat.id_obat=pesanan.id_obat')
+        ->join('user', 'user.id=pesanan.id_user')->findAll(); 
+    }
+
+    public function updateData($data, $id){
+        return $this->update($id, $data);
+    }
+
+    public function hapusData($id)
+    {
+         return $this->delete($id);
     }
 }
 

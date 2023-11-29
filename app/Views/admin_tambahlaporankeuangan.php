@@ -43,23 +43,23 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/pegawai/savelaporankeuangan')?>" method="POST">
+    <form action="<?= base_url('/admin/storelaporankeuangan')?>" method="POST">
 
     
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" >
+  <input name="tanggal" type="date" class="form-control" id="exampleFormControlInput1" >
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Pemasukan</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+  <input name="pemasukan" type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Total</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+  <input name="total" type="text" class="form-control" id="exampleFormControlInput1" >
     </div>
 
     

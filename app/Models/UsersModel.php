@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class UsersModel extends Model
 {
-    protected $table            = 'user';
+    protected $table            = 'users';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama','katasandi','umur','telepon','role'];
+    protected $allowedFields    = ['email','username','umur','telepon'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,11 +38,48 @@ class UsersModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getPegawai(){
-        return $this->where('role', 'pegawai')->findAll();
+
+    public function getPegawai($id = null){
+        if($id==!null){
+            return $this->select(' users.*')
+            ->join('auth_groups_users', 'auth_groups_users.user_id=users.id')
+            ->join('auth_groups', 'auth_groups.id=auth_groups_users.group_id')
+            ->where('group_id', '2')->find($id);  
+        }
+        return $this->select(' users.*')
+        ->join('auth_groups_users', 'auth_groups_users.user_id=users.id')
+        ->join('auth_groups', 'auth_groups.id=auth_groups_users.group_id')
+        ->where('group_id', '2')->findAll();  
     }
 
-    public function getPelanggan(){
-        return $this->where('role', 'pelanggan')->findAll();
+    public function getPelanggan($id = null){
+        if($id==!null){
+            return $this->select(' users.*')
+            ->join('auth_groups_users', 'auth_groups_users.user_id=users.id')
+            ->join('auth_groups', 'auth_groups.id=auth_groups_users.group_id')
+            ->where('group_id', '3')->find($id);  
+        }
+        return $this->select(' users.*')
+        ->join('auth_groups_users', 'auth_groups_users.user_id=users.id')
+        ->join('auth_groups', 'auth_groups.id=auth_groups_users.group_id')
+        ->where('group_id', '3')->findAll();  
+    }
+
+    public function updatePegawai($data, $id){
+        return $this->update($id, $data);
+    }
+
+    public function updatePelanggan($data, $id){
+        return $this->update($id, $data);
+    }
+
+    public function hapusPegawai($id)
+    {
+         return $this->delete($id);
+    }
+
+    public function hapusPelanggan($id)
+    {
+         return $this->delete($id);
     }
 }

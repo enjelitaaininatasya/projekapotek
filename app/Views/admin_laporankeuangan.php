@@ -56,6 +56,10 @@ foreach($laporann as $laporan){
   <td><?=$laporan['tanggal']?></td>
   <td><?=$laporan['pemasukan']?></td>
   <td><?=$laporan['total']?></td>
+  <td>
+        <a href="<?= base_url('/admin/editlaporan/' . $laporan['id_laporan']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+        <a href="<?= base_url('/admin/hapuslaporan/' . $laporan['id_laporan']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button></a>
+  </td>
 </tr>
 <?php
 }

@@ -40,6 +40,7 @@
 <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Email</th>
       <th scope="col">Nama</th>
       <th scope="col">Umur</th>
       <th scope="col">Telepon</th>
@@ -51,11 +52,16 @@ foreach ($pelanggann as $pelanggan){
     ?>
     
     <tr>
-      
-      <td><?=$pelanggan['id']?></td>
-      <td><?=$pelanggan['nama']?></td>
+    <td><?=$pelanggan['id']?></td>
+      <td><?=$pelanggan['email']?></td>
+      <td><?=$pelanggan['username']?></td>
       <td><?=$pelanggan['umur']?></td>
       <td><?=$pelanggan['telepon']?></td>
+      <td>
+        <a href="<?=base_url('/admin/editpelanggan/'.$pelanggan['id'])?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+        <a href="<?=base_url('/admin/hapuspelanggan/'.$pelanggan['id'])?>"><button class="btn" style="background-color : #C67C4E; color:white">Hapus</button></a>
+        <a href="<?=base_url('/admin/turnpegawai/'.$pelanggan['id'])?>"><button class="btn" style="background-color : #C67C4E; color:white">Jadikan Pegawai</button></a>
+      </td>
     </tr>
     <?php
 }
