@@ -43,23 +43,29 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/konfirmasipesanan')?>" method="POST">
+    <form action="<?= base_url('/admin/updatepegawai/' . $pegawai['id']) ?>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
 
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Email</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="email" value="<?=$pegawai['email']?>">
     </div>
 
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal Lahir</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Username</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="username" value="<?=$pegawai['username']?>">
     </div>
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Password</label>
-  <input type="Password" class="form-control" id="exampleFormControlInput1" >
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Umur</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="umur" value="<?=$pegawai['umur']?>">
+    </div>
+
+    <div class="mb-1">
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Telepon</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="telepon" value="<?=$pegawai['telepon']?>">
     </div>
 
   <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>

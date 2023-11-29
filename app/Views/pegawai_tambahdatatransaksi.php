@@ -40,7 +40,7 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/savedtp')?>" method="POST">
+    <form action="<?= base_url('/pegawai/tambahdatatransaksi')?>" method="POST">
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">ID Pesanan</label>

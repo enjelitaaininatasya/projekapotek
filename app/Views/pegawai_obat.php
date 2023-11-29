@@ -39,7 +39,7 @@
     
 <div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:150px; border-radius:10px; margin-top:50px; margin-left:39px;">
 
-<center><img src="https://res-5.cloudinary.com/dk0z4ums3/image/upload/c_scale,h_500,w_500/v1/production/pharmacy/products/1687399919_paracet_pim" width="120px" alt=""></center>
+<center><img src="<?=$obat['foto'] ?>" width="120px" alt=""></center>
 
 <center>
 <p> 

@@ -4,18 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LaporankeuanganModel extends Model
+class GroupModel extends Model
 {
-    protected $table            = 'laporankeuangan';
-    protected $primaryKey       = 'id_laporan';
+    protected $table            = 'auth_groups_users';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal','pemasukan','total'];
+    protected $allowedFields    = ['group_id', 'user_id'];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -38,24 +38,8 @@ class LaporankeuanganModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-
-    public function saveLaporan($data){
-        $this->insert($data);
-    }
-
-    public function getLaporan($id = null){
-        if($id==!null){
-            return $this->find($id);  
-        }
-        return $this->findAll();  
-    }
-
-    public function updateLaporan($data, $id){
-        return $this->update($id, $data);
-    }
-
-    public function hapusLaporan($id)
-    {
-         return $this->delete($id);
+    
+    public function turnPegawai($id){
+        $this->set('group_id','2')->where('user_id',$id)->update();
     }
 }

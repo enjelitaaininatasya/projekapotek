@@ -41,4 +41,53 @@ class LaporankeuanganController extends BaseController
         return view('pegawai_laporankeuangan');
     }
 
+    public function storeAdmin()
+    {
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+
+        $this->laporankeuanganModel->saveLaporan([
+            'tanggal'=>$this->request->getVar('tanggal'),
+            'pemasukan'=>$this->request->getVar('pemasukan'),
+            'total'=>$this->request->getVar('total'),
+            
+        ]);
+        return redirect()->to(base_url('/admin/laporankeuangan'));
+    }
+
+    public function editAdmin($id)
+    {
+        $this->laporankeuanganModel= new LaporankeuanganModel();
+        $data=[
+            'laporan'=>$this->laporankeuanganModel->getLaporan($id),
+        ];
+        return view ('admin_editlaporan', $data);
+    }
+
+    public function updateAdmin($id)
+    {
+        $this->laporankeuanganModel= new LaporankeuanganModel();
+        $data = [
+            'tanggal' =>$this->request->getPost('tanggal'),
+            'pemasukan' =>$this->request->getPost('pemasukan'),
+            'total' =>$this->request->getPost('total'),
+            
+        ];
+
+        $result = $this->laporankeuanganModel->updateLaporan($data,$id);
+       
+
+        if ($result){
+            return redirect()->to('/admin/laporankeuangan');
+        }
+    }
+
+    public function destroyAdmin ($id)
+    {
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+        $result = $this -> laporankeuanganModel->hapusLaporan($id);
+
+        if ($result){
+            return redirect()->to('/admin/laporankeuangan');
+        }
+    }
 }

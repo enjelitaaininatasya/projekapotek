@@ -62,6 +62,10 @@ foreach ($dataa as $data){
       <td><?=$data['nama_obat']?></td>
       <td><?=$data['jumlah']?></td>
       <td><?=$data['harga']?></td>
+      <td>
+        <a href="<?= base_url('/admin/editdatatransaksi/' . $data['id_datatransaksi']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
+        <a href="<?= base_url('/admin/hapusdatatransaksi/' . $data['id_datatransaksi']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">HAPUS</button></a>
+      </td>
     </tr>
     <?php
 }
