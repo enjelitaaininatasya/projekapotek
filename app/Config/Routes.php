@@ -50,6 +50,7 @@ $routes->get('/pelanggan/aboutus', [Home::class, 'aboutuspelanggan'], ['filter' 
 $routes->get('/pelanggan/obat', [ObatController::class, 'indexPelanggan'], ['filter' => 'role:pelanggan']);
 $routes->get('/pelanggan/tambahpesanan', [PesananController::class, 'create'], ['filter' => 'role:pelanggan']);
 $routes->post('/pelanggan/konfirmasipesanan', [PesananController::class, 'konfirmasi'], ['filter' => 'role:pelanggan']);
+$routes->post('/pelanggan/createpesanan', [PesananController::class, 'pesanan'], ['filter' => 'role:pelanggan']);
 
 // admin aboutus
 $routes->get('/admin/aboutus', [Home::class, 'aboutusadmin'], ['filter' => 'role:admin']);

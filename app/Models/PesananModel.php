@@ -43,4 +43,8 @@ class PesananModel extends Model
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
         ->join('user', 'user.id=pesanan.id_user')->findAll();    
     }
+
+    public function savePesanan($data){
+        $this->insert($data);   
+    }
 }

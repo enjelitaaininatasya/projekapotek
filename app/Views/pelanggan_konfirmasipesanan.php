@@ -29,25 +29,36 @@
 
 <div style="padding-left:23px; padding-right:23px; font-weight:bold;">
 
-<p>
-    Tanggal :
-    <br>
-    <br>
-    Pemesan :
-    <br>
-    <br>
-    Pembelian :
-    <br>
-    <br>
-    Sebanyak :
-    <br>
-    <br>
-    Total Harga :
-    <br>
-    <br>
-</p>
+<form class="form-control" action="/pelanggan/createpesanan" method="POST">
+  <?= csrf_field() ?>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<?= $date ?>" disabled>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Pemesan</label>
+    <input type="text" class="form-control" value="<?= user()->username;?>" disabled>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Pembelian</label>
+    <input type="text" class="form-control" value="<?= $obat['nama_obat']?>" disabled>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Jumlah Obat</label>
+    <input type="text" class="form-control" value="<?= $jumlah ?>"  disabled>
+    <input type="hidden" name="jumlah" value="<?= $jumlah ?>">
+  </div>
+  <input type="hidden" value="<?= $obat['id_obat']?>" name="id_obat">
 
-<a href="<?= base_url('/obatpelanggan')?>"><button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:10px; margin-bottom:30px;">Pesan</button></a>
+  <label class="form-label">Total Harga</label>
+  <div class="input-group mb-3">
+    <span class="input-group-text">Rp</span>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="<?= $obat['harga_obat']*$jumlah?>" disabled>
+    <input type="hidden" name="harga" value="<?= $obat['harga_obat']*$jumlah?>">
+  </div>
+
+  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:10px; margin-bottom:30px;">Pesan</button>
+</form>
 
 </div>
 </div>
