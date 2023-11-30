@@ -28,18 +28,57 @@ class LaporankeuanganController extends BaseController
 
     public function createPegawai()
     {
-        return view('pegawai_tambahlaporankeuangan');
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+        $data = $this->laporankeuanganModel->getLaporan();
+
+        $data = [
+            'laporan' => $data
+        ];
+        return view('pegawai_tambahlaporankeuangan', $data);
     }
 
     public function createAdmin()
     {
-        return view('admin_tambahlaporankeuangan');
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+        $data = $this->laporankeuanganModel->getLaporan();
+
+        $data = [
+            'laporan' => $data
+        ];
+        return view('admin_tambahlaporankeuangan', $data);
     }
 
     public function storePegawai()
     {
-        return view('pegawai_laporankeuangan');
+        $this->laporankeuanganModel = new LaporankeuanganModel();
+
+        $tanggal = $this->request->getVar('tanggal');
+        $pemasukan = $this->request->getVar('pemasukan');
+        $total = $this->request->getVar('total');
+
+        if (!$pemasukan || !is_numeric($pemasukan)) {
+        $pemasukan = 0;
+        }
+
+        if (!$total || !is_numeric($total)) {
+        $total = 0;
+        }
+
+        $data = [
+        'tanggal' => $tanggal,
+        'pemasukan' => $pemasukan,
+        'total' => $total,
+        ];
+
+        $this->laporankeuanganModel->saveLaporan($data);
+        $data = [
+            'laporann' => $this->laporankeuanganModel->getLaporan(),
+        ];
+
+        return view('pegawai_laporankeuangan', $data);
     }
+
+   
 
     public function storeAdmin()
     {

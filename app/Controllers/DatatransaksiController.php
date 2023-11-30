@@ -31,7 +31,14 @@ class DatatransaksiController extends BaseController
 
     public function createPegawai()
     {
-        return view('pegawai_tambahdatatransaksi');
+        $this->datatransaksiModel = new DatatransaksiModel();
+        $data = $this->datatransaksiModel->getData();
+
+        $data = [
+            
+            'data' => $data
+        ];
+        return view('pegawai_tambahdatatransaksi', $data);
     }
 
     public function createAdmin()
@@ -53,7 +60,22 @@ class DatatransaksiController extends BaseController
 
     public function storePegawai()
     {
-        return view('pegawai_datatransaksi');
+        $this->datatransaksiModel = new DatatransaksiModel();
+
+        $idpesanan = $this->request->getVar('idpesanan');
+        $tanggal = $this->request->getVar('tanggal');
+       
+        $data = [
+            'idpesanan' => $idpesanan,
+            'tanggal' => $tanggal,
+            
+            ];
+
+        $this->datatransaksiModel->saveData($data);
+        $data = [
+            'dataa' => $this->datatransaksiModel->getData(),
+        ];
+        return redirect()->to(base_url('/pegawai/datatransaksi', $data));
     }
 
     public function editAdmin($id)
