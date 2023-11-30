@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PesananModel extends Model
 {
     protected $table            = 'pesanan';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_pesanan';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

@@ -55,7 +55,7 @@ class CreatePesananTable extends Migration
         ],
     ]);
     $this->forge->addKey('id_pesanan', true);
-    $this->forge->addForeignKey('id_user', 'user', 'id');
+    $this->forge->addForeignKey('id_user', 'users', 'id');
     $this->forge->addForeignKey('id_obat', 'obat', 'id_obat');
     $this->forge->createTable('pesanan');
 }
