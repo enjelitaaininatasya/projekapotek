@@ -10,13 +10,13 @@
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
-         <a href="<?=base_url('/pegawai/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Tentang Kami</button></a>
+         <a href="<?=base_url('/pegawai/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/pegawai/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
   </li>
   <li class="nav-item">
-        <a href="<?=base_url('/pegawai/datatransaksi')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Transaksi</button></a>
+        <a href="<?=base_url('/pegawai/datatransaksi')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Transaksi</button></a>
   </li>
   <li class="nav-item">
         <a href="<?=base_url('/pegawai/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
@@ -40,16 +40,16 @@
 <div style="padding-left:23px; padding-right:23px;">
 
 
-    <form action="<?= base_url('/pegawai/tambahdatatransaksi')?>" method="POST">
+    <form action="<?= base_url('/pegawai/savedatatransaksi')?>" method="POST">
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">ID Pesanan</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="idpesanan">
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" >
+  <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal">
     </div>
 
     

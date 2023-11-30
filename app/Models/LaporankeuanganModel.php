@@ -38,19 +38,21 @@ class LaporankeuanganModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function getLaporan($id = null){
+        if ($id != null)
+        {
+            return $this->find($id);
+        }
+        return $this->findAll(); 
+    }
 
-    public function saveLaporan($data){
+    public function saveLaporan($data)
+    {
         $this->insert($data);
     }
 
-    public function getLaporan($id = null){
-        if($id==!null){
-            return $this->find($id);  
-        }
-        return $this->findAll();  
-    }
-
-    public function updateLaporan($data, $id){
+    public function updateLaporan($data, $id)
+    {
         return $this->update($id, $data);
     }
 
