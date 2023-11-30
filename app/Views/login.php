@@ -89,17 +89,10 @@
         <?= view('Myth\Auth\Views\_message_block') ?>
         <form action="<?= url_to('login') ?>" method="post">
 			<?= csrf_field() ?>
-            <div class="form-group">
-                <label for="name">Email</label>
-                <input type="text" name="login"  class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Nama Pengguna" required>
-                    <div class="invalid-feedback">
-								<?= session('errors.login') ?>
-							</div>
-            </div>
 
             <div class="form-group">
                 <label for="password">Nama Pengguna</label>
-                <input type="text" name="login" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" required>
+                <input type="text" name="login" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Nama Pengguna" required>
                     <div class="invalid-feedback">
 								<?= session('errors.login') ?>
 							</div>

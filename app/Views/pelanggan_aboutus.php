@@ -19,6 +19,13 @@
   <li class="nav-item">
         <a href="<?=base_url('/pelanggan/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
+  <li class="nav-item">
+        <?php if (logged_in()) : ?>
+            <a class="btn btn-dark" href="/logout">Logout</a>
+        <?php else : ?>
+            <a class="btn btn-dark" href="/login">Login</a> 
+        <?php endif; ?>     
+  </li>
 </ul>
 
 <div style="clear:both;">

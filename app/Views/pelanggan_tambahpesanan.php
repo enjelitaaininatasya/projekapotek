@@ -33,38 +33,37 @@
 
     <form action="<?= base_url('/pelanggan/konfirmasipesanan')?>" method="POST">
 
-    <div class="mb-1">
+    <!-- <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
   <input type="date" class="form-control" id="exampleFormControlInput1" >
-    </div>
+    </div> -->
 
-    <div class="mb-1">
+    <!-- <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Nama</label>
   <input type="text" class="form-control" id="exampleFormControlInput1" >
+    </div> -->
+
+    <div class="mb-1">
+      <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Obat</label>
+      <select class="form-select" aria-label="Default select example" name="id_obat">
+        <option selected>Pilih Obat</option>
+        <?php foreach($obat as $obat){
+          ?>
+        <option value="<?= $obat['id_obat']?>"><?= $obat['nama_obat']?></option>
+        <?php } ?>
+      </select>
     </div>
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Obat</label>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Pilih Obat</option>
-    <option value="1">Kapsul</option>
-    <option value="2">Tablet</option>
-    <option value="3">Sirup</option>
-  </select>
+      <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Jumlah</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" name="jumlah_obat">
+        </div>
+
+      <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
+      
     </div>
 
-    <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Jumlah</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" >
-    </div>
-
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Tambah</button>
-  
-</div>
-
-</div>
-
-    </form>
+  </form>
 
 </div>
 
