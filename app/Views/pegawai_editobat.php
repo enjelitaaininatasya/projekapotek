@@ -45,12 +45,12 @@
             <div class="mb-1">
             <?= csrf_field() ?>
                 <label for="nama" style="font-size:14px" class="form-label">Nama</label>
-                <input type="text" class="form-control" value="<?= $obat['nama_obat'] ?>" id="nama" name="nama">
+                <input type="text" class="form-control" value="<?= $obat['nama_obat'] ?>" id="nama" name="nama" required>
             </div>
 
             <div class="mb-1">
                 <label for="tipe_obat" style="font-size:14px" class="form-label">Tipe Obat</label>
-                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat">
+                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat" required>
                     <option value="Kapsul">Kapsul</option>
                     <option value="Tablet">Tablet</option>
                     <option value="Sirup">Sirup</option>
@@ -59,12 +59,12 @@
 
             <div class="mb-1">
                 <label for="harga" style="font-size:14px" class="form-label">Harga</label>
-                <input type="text" class="form-control" value="<?= $obat['harga_obat'] ?>" id="harga" name="harga">
+                <input type="text" class="form-control" value="<?= $obat['harga_obat'] ?>" id="harga" name="harga" required>
             </div>
 
             <div class="mb-1">
                 <label for="foto" style="font-size:14px" class="form-label">Foto</label>
-                <img src="<?= $obat['foto'] ?? '<default-foto>' ?>">
+                <img width="120px" src="<?= $obat['foto'] ?? '<default-foto>' ?>">
                 <input type="file" class="form-control" id="foto" name="foto">
             </div>
 

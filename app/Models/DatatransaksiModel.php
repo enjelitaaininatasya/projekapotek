@@ -45,15 +45,15 @@ class DatatransaksiModel extends Model
 
     public function getData($id = null){
         if($id==!null){
-            return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, user.*')
+            return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, users.*')
         ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
-        ->join('user', 'user.id=pesanan.id_user')->find($id); 
+        ->join('users', 'users.id=pesanan.id_user')->find($id); 
         }
-        return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, user.*')
+        return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, users.*')
         ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
-        ->join('user', 'user.id=pesanan.id_user')->findAll(); 
+        ->join('users', 'users.id=pesanan.id_user')->findAll(); 
     }
 
     public function updateData($data, $id){

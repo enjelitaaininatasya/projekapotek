@@ -55,7 +55,7 @@ foreach ($dataa as $data){
       
       <td><?=$data['id_datatransaksi']?></td>
       <td><?=$data['tanggal']?></td>
-      <td><?=$data['nama']?></td>
+      <td><?=$data['username']?></td>
       <td><?=$data['nama_obat']?></td>
       <td><?=$data['jumlah']?></td>
       <td><?=$data['harga']?></td>

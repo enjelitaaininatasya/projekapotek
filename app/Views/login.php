@@ -13,15 +13,13 @@
             padding: 50px;
         }
          .container {
-            background-color: #ffff;
+            background-color: #5d535e;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 30px;
             width: 400px;
-            position: absolute;
             border: 1px solid #ABABAB;
-            top: 50px;
-            right: 200px;
+            margin:auto;
         }
 
         .container h1 {
@@ -37,7 +35,7 @@
         .button{
             position: absolute;
             top: 10px;
-            right: 70px;
+            right: 60px;
             width: 80px;
             height: 80px;
            
@@ -61,12 +59,12 @@
         }
 
         .form-group button {
-            background-color: #C67C4E;
+            background-color: #dfe166;
             color: #fff;
-            border: none;
-            padding: 10px 10px;
+            border: none; 
+            padding: 10px 10px ;
             border-radius: 5px;
-            width: 350px;
+            width: 337px;
             cursor: pointer;
             transition: transform 0.2s;
             margin-top: 20px;
@@ -77,30 +75,31 @@
         }
     </style>
 </head>
-<body>
+<body style="height: 100vh; 
+  background: linear-gradient( 90deg, #dfe166 50%, #ffffff 50%); ">
 
-    <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
+<br>
 
     <div class="container">
-        <p class="left-align">Selamat Datang !</p>
-        <h1 class="left-align">Masuk</h1>
-        <p class="left-align">APOTEK CITA SEHAT</p>
+        <p style="color:#ffffff" class="left-align">Selamat Datang !</p>
+        <h1 style="color:#ffffff" class="left-align">Masuk</h1>
+        <p style="color:#ffffff" class="left-align">APOTEK CITA SEHAT</p>
 
         <?= view('Myth\Auth\Views\_message_block') ?>
         <form action="<?= url_to('login') ?>" method="post">
 			<?= csrf_field() ?>
 
             <div class="form-group">
-                <label for="password">Nama Pengguna</label>
-                <input type="text" name="login" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Nama Pengguna" required>
+                <label style="color:#ffffff" for="password">Nama Pengguna</label>
+                <input type="text" name="login" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" required>
                     <div class="invalid-feedback">
 								<?= session('errors.login') ?>
 							</div>
             </div>
 
             <div class="form-group">
-                <label for="password">Kata Sandi</label>
-                <input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" required>
+                <label style="color:#ffffff" for="password">Kata Sandi</label>
+                <input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"  required>
                     <div class="invalid-feedback">
 								<?= session('errors.password') ?>
 							</div>
@@ -116,3 +115,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<!--  -->
+
+

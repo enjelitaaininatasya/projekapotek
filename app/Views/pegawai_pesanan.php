@@ -53,7 +53,7 @@ foreach ($pesanann as $pesanan){
       
       <td><?=$pesanan['id_pesanan']?></td>
       <td><?=$pesanan['tanggal']?></td>
-      <td><?=$pesanan['nama']?></td>
+      <td><?=$pesanan['username']?></td>
       <td><?=$pesanan['nama_obat']?></td>
       <td><?=$pesanan['jumlah']?></td>
       <td><?=$pesanan['harga']?></td>

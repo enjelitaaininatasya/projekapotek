@@ -4,10 +4,12 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DatatransaksiModel;
+use App\Models\PesananModel;
 
 class DatatransaksiController extends BaseController
 {
     public $datatransaksiModel;
+    public $pesananModel;
 
     public function indexAdmin()
     {
@@ -31,8 +33,8 @@ class DatatransaksiController extends BaseController
 
     public function createPegawai()
     {
-        $this->datatransaksiModel = new DatatransaksiModel();
-        $data = $this->datatransaksiModel->getData();
+        $this->pesananModel = new PesananModel();
+        $data = $this->pesananModel->getPesanan();
 
         $data = [
             
@@ -43,18 +45,28 @@ class DatatransaksiController extends BaseController
 
     public function createAdmin()
     {
-        return view('admin_tambahdatatransaksi');
+        $this->pesananModel = new PesananModel();
+        $data = $this->pesananModel->getPesanan();
+
+        $data = [
+            
+            'data' => $data
+        ];
+        return view('admin_tambahdatatransaksi', $data);
     }
 
     public function storeAdmin()
     {
         $this->datatransaksiModel = new DatatransaksiModel();
 
+
         $this->datatransaksiModel->saveData([
             'id_pesanan'=>$this->request->getVar('idpesanan'),
             'tanggal'=>$this->request->getVar('tanggal'),
             
         ]);
+
+
         return redirect()->to(base_url('/admin/datatransaksi'));
     }
 
@@ -66,23 +78,23 @@ class DatatransaksiController extends BaseController
         $tanggal = $this->request->getVar('tanggal');
        
         $data = [
-            'idpesanan' => $idpesanan,
+            'id_pesanan' => $idpesanan,
             'tanggal' => $tanggal,
             
             ];
 
         $this->datatransaksiModel->saveData($data);
-        $data = [
-            'dataa' => $this->datatransaksiModel->getData(),
-        ];
-        return redirect()->to(base_url('/pegawai/datatransaksi', $data));
+        
+        return redirect()->to(base_url('/pegawai/datatransaksi'));
     }
 
     public function editAdmin($id)
     {
         $this->datatransaksiModel= new DatatransaksiModel();
+        $this->pesananModel = new PesananModel();
         $data=[
             'data'=>$this->datatransaksiModel->getData($id),
+            'pesanan'=>$this->pesananModel->getPesanan(),
         ];
         return view ('admin_editdatatransaksi', $data);
     }

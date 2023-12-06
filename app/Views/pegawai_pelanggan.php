@@ -50,7 +50,7 @@ foreach ($pelanggann as $pelanggan){
     <tr>
       
       <td><?=$pelanggan['id']?></td>
-      <td><?=$pelanggan['nama']?></td>
+      <td><?=$pelanggan['username']?></td>
       <td><?=$pelanggan['umur']?></td>
       <td><?=$pelanggan['telepon']?></td>
     </tr>

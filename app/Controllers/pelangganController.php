@@ -61,11 +61,10 @@ class PelangganController extends BaseController
     public function turnPegawai($id)
     {   
         $this->groupModel = new GroupModel();
-        $result = $this->groupModel->turnPegawai($id);
-        if ($result) {
+        $this->groupModel->turnPegawai($id);
 
-        return redirect()->to('/admin/pegawai');
-        }
+
+        return redirect()->to('/admin/pelanggan');
     }
 
     public function destroy ($id)

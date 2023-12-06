@@ -27,6 +27,14 @@
   <li class="nav-item">
         <a href="<?=base_url('/pegawai/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
   </li>
+  </li>
+  <li class="nav-item">
+        <?php if (logged_in()) : ?>
+            <a class="btn btn-dark" href="/logout">Logout</a>
+        <?php else : ?>
+            <a class="btn btn-dark" href="/login">Login</a> 
+        <?php endif; ?>     
+  </li>
 </ul>
 
 
