@@ -4,10 +4,13 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
+use App\Models\GroupModel;
 
 class PegawaiController extends BaseController
 {
     public $usersModel;
+    public $groupModel;
+
     public function indexAdmin()
     {
         $this->usersModel = new UsersModel();
@@ -60,6 +63,15 @@ class PegawaiController extends BaseController
 
         return redirect()->to('/admin/pegawai');
         }
+    }
+
+    public function turnPelanggan($id)
+    {   
+        $this->groupModel = new GroupModel();
+        $this->groupModel->turnPelanggan($id);
+
+
+        return redirect()->to('/admin/pegawai');
     }
 
    

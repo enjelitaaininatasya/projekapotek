@@ -6,7 +6,7 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color:#dfe166 ">
 
 <ul class="nav justify-content-center" style="margin-top:20px;">
   <li class="nav-item">
@@ -23,32 +23,44 @@
   </li>
 </ul>
 
-<div style="display:flex; flex-wrap: wrap;">
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px; background-color:#5d535e">
+
+<center><h1  style="color:white">Riwayat</h1></center>
+
+<table style="margin-top:50px" class="table table-#dfe166">
+<thead>
+    <tr>
+      <th scope="col" style="background-color:#5d535e; color:white">ID</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Tanggal</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Nama</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Obat</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Jumlah</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Harga</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Status</th>
+    </tr>
+  </thead>
+  <tbody>
 <?php
-    
-    foreach ($obats as $obat){
+foreach ($riwayatt as $riwayat){
     ?>
     
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:180px; border-radius:10px; margin-top:50px; margin-left:39px;">
-
-<center><img src="<?=$obat['foto'] ?>" width="120px" alt=""></center>
-
-<center>
-<p> 
-    <b><?=$obat['nama_obat'] ?></b>
-    <br>
-    <?=$obat['tipe_obat'] ?>
-    <br>
-    Rp.<?=$obat['harga_obat'] ?>
-</p>
-</center>
-</div>
+    <tr>   
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['id_pesanan']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['tanggal']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['username']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['nama_obat']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['jumlah']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['harga']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$riwayat['status']?></td>
+    </tr>
     <?php
-    }
-    ?>
+}
+?>
     
+  </tbody>
+</table>
+<br>
 </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -16,15 +16,14 @@
             padding: 50px;
         }
          .container {
-            background-color: #ffff;
+            background-color: #5d535e;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 400px;
-            position: absolute;
+            margin:auto; 
             border: 1px solid #ABABAB;
-            top: 50px;
-            right: 150px;
+          
         }
 
         .container h1 {
@@ -54,6 +53,7 @@
 
         .form-group label {
             display: block;
+            float: left;
             font-weight: regular;
         }
 
@@ -65,7 +65,7 @@
         }
 
         .form-group button {
-            background-color: #C67C4E;
+            background-color: #dfe166;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -79,42 +79,46 @@
         }
     </style>
 </head>
-<body>
-
-
-    <img src="<?= base_url('assets/img/register.jpg') ?>" alt="Gambar Sebelah Kiri" class="left-image">
+<body style="height: 100vh; 
+  background: linear-gradient( 90deg, #dfe166 50%, #ffffff 50%); ">
 
 
     <div class="container">
-        <p class="left-align">Selamat Datang !</p>
-        <h1 class="left-align">Daftar</h1>
-        <p class="left-align">APOTEK CITA SEHAT</p>
+        <p style="color:#ffffff" class="left-align">Selamat Datang !</p>
+        <h1 style="color:#ffffff" class="left-align">Daftar</h1>
+        <p style="color:#ffffff" class="left-align">APOTEK CITA SEHAT</p>
         <?= view('Myth\Auth\Views\_message_block') ?>
         <form action="<?= url_to('register') ?>" method="post">
             <?= csrf_field() ?>
             <div class="form-group">
-                <label for="name">Email</label>
-                <input value="<?= old('email') ?>" type="text" name="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"   placeholder="Masukkan Email Anda" required>
+                <label style="color:#ffffff" for="name">Email</label>
+                <input value="<?= old('email') ?>" type="text" name="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" required>
             </div>
             <div class="form-group">
-                <label for="name">Nama Pengguna</label>
-                <input value="<?= old('username') ?>" type="text" name="username" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>"   placeholder="Masukkan Nama Pengguna" required>
+                <label style="color:#ffffff"for="name">Nama Pengguna</label>
+                <input value="<?= old('username') ?>" type="text" name="username" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" required>
             </div>
-            <div class="form-group">
-                <label for="password">Kata Sandi</label>
-                <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="Masukkan Kata Sandi" autocomplete="off" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Konfirmasi Kata Sandi</label>
-                <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="Konfirmasi Kata Sandi" autocomplete="off" required>
-            </div>
-            <div class="form-group">
-                <label for="umur">Umur</label>
-                <input type="text" name="umur"  placeholder="Masukkan Umur" required>
-            </div>
-            <div class="form-group">
-                <label for="telp">Telepon</label>
-                <input type="text" name="telepon"  placeholder="Masukkan Nomor Telepon" required>
+            
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label style="color:#ffffff" for="password">Kata Sandi</label>
+                    <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" autocomplete="off" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label style="color:#ffffff"for="password">Konfirmasi Kata Sandi</label>
+                    <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>"  autocomplete="off" required>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label style="color:#ffffff"for="umur">Umur</label>
+                    <input type="text" name="umur"  class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label style="color:#ffffff"for="telp">Telepon</label>
+                    <input type="text" name="telepon"  class="form-control" required>
+                </div>
             </div>
             <div class="form-group">
                 <button type="submit" name="register">Mendaftar</button>

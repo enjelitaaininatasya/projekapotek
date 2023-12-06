@@ -17,6 +17,9 @@
         <a href="<?=base_url('/pelanggan/tambahpesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
   </li>
   <li class="nav-item">
+        <a href="<?=base_url('/pelanggan/riwayat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Riwayat</button></a>
+  </li>
+  <li class="nav-item">
         <a href="<?=base_url('/pelanggan/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
   <li class="nav-item">

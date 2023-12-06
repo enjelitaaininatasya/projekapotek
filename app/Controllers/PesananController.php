@@ -10,6 +10,7 @@ class PesananController extends BaseController
 {
     public $obatModel;
     public $pesananModel;
+
     public function __construct(){
         $this->obatModel = new ObatModel();
         $this->pesananModel = new PesananModel();
@@ -43,12 +44,16 @@ class PesananController extends BaseController
     public function pesanan()
     {
         $id_user = user_id();
+        $tanggalSekarang = Time::now();
+        $formatTanggal = $tanggalSekarang->toLocalizedString('dd-MM-yyyy');
         
         $this->pesananModel->savePesanan([
             'id_user' => $id_user,
-            'id_obat' => $this->request->getPost('id_obat'),
-            'jumlah' => $this->request->getPost('jumlah'),
-            'harga' =>  $this->request->getPost('harga'),      
+            'id_obat' => $this->request->getVar('id_obat'),
+            'jumlah' => $this->request->getVar('jumlah'),
+            'tanggal' =>  $formatTanggal, 
+            'harga' =>  $this->request->getVar('harga'), 
+            'status' =>  $this->request->getVar('status'),        
         ]);
 
         return redirect()->to(base_url('/pelanggan/aboutus'));
@@ -57,8 +62,7 @@ class PesananController extends BaseController
     
     public function indexAdmin()
     {
-
-        
+  
         $data = [
             'pesanann' => $this->pesananModel->getPesanan(),
         ];
@@ -73,6 +77,23 @@ class PesananController extends BaseController
             'pesanann' => $this->pesananModel->getPesanan(),
         ];
         return view ("pegawai_pesanan", $data);
+    }
+
+    public function riwayat()
+    {
+        $this->pesananModel = new PesananModel();
+        $data = [
+            'riwayatt' => $this->pesananModel->riwayatPesanan(),
+        ];
+        return view ("pelanggan_riwayat", $data);
+    }
+
+    public function completeAdmin($id)
+    {
+        $this->pesananModel = new PesananModel();
+        $this->pesananModel->completePesanan($id);
+    
+        return redirect()->to(base_url('/admin/pesanan'));
     }
 
 }

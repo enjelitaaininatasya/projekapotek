@@ -42,4 +42,8 @@ class GroupModel extends Model
     public function turnPegawai($id){
         $this->set('group_id','2')->where('user_id',$id)->update();
     }
+
+    public function turnPelanggan($id){
+        $this->set('group_id','3')->where('user_id',$id)->update();
+    }
 }

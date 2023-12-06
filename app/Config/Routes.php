@@ -51,6 +51,7 @@ $routes->get('/pelanggan/obat', [ObatController::class, 'indexPelanggan'], ['fil
 $routes->get('/pelanggan/tambahpesanan', [PesananController::class, 'create'], ['filter' => 'role:pelanggan']);
 $routes->post('/pelanggan/konfirmasipesanan', [PesananController::class, 'konfirmasi'], ['filter' => 'role:pelanggan']);
 $routes->post('/pelanggan/createpesanan', [PesananController::class, 'pesanan'], ['filter' => 'role:pelanggan']);
+$routes->get('/pelanggan/riwayat', [PesananController::class, 'riwayat'], ['filter' => 'role:pelanggan']);
 
 // admin aboutus
 $routes->get('/admin/aboutus', [Home::class, 'aboutusadmin'], ['filter' => 'role:admin']);
@@ -67,6 +68,7 @@ $routes->get('/admin/tambahpegawai', [PegawaiController::class, 'create'], ['fil
 $routes->get('/admin/editpegawai/(:any)', [PegawaiController::class, 'edit'], ['filter' => 'role:admin']);
 $routes->put('/admin/updatepegawai/(:any)', [PegawaiController::class, 'update'], ['filter' => 'role:admin']);
 $routes->get('/admin/hapuspegawai/(:any)', [PegawaiController::class, 'destroy'], ['filter' => 'role:admin']);
+$routes->get('/admin/turnpelanggan/(:any)', [PegawaiController::class, 'turnPelanggan'], ['filter' => 'role:admin']);
 // admin pelanggan
 $routes->get('/admin/pelanggan', [PelangganController::class, 'indexAdmin'], ['filter' => 'role:admin']);
 $routes->get('/admin/editpelanggan/(:any)', [PelangganController::class, 'edit'], ['filter' => 'role:admin']);
@@ -75,6 +77,7 @@ $routes->get('/admin/turnpegawai/(:any)', [PelangganController::class, 'turnPega
 $routes->get('/admin/hapuspelanggan/(:any)', [PelangganController::class, 'destroy'], ['filter' => 'role:admin']);
 //admin pesanan
 $routes->get('/admin/pesanan', [PesananController::class, 'indexAdmin'], ['filter' => 'role:admin']);
+$routes->get('/admin/pesananselesai/(:any)', [PesananController::class, 'completeAdmin'], ['filter' => 'role:admin']);
 // admin data transaksi
 $routes->get('/admin/datatransaksi', [DatatransaksiController::class, 'indexAdmin'], ['filter' => 'role:admin']);
 $routes->get('/admin/tambahdatatransaksi', [DatatransaksiController::class, 'createAdmin'], ['filter' => 'role:admin']);

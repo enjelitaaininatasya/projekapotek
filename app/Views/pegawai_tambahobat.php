@@ -45,12 +45,12 @@
             
             <div class="mb-1">
                 <label for="nama" style="font-size:14px" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama_obat" name="nama_obat">
+                <input type="text" class="form-control" id="nama_obat" name="nama_obat" required>
             </div>
 
             <div class="mb-1">
                 <label for="tipe_obat" style="font-size:14px" class="form-label">Tipe Obat</label>
-                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat">
+                <select class="form-select" aria-label="Default select example" id="tipe_obat" name="tipe_obat" required>
                     <option value="Kapsul">Kapsul</option>
                     <option value="Tablet">Tablet</option>
                     <option value="Sirup">Sirup</option>
@@ -59,7 +59,7 @@
 
             <div class="mb-1">
                 <label for="harga" style="font-size:14px" class="form-label">Harga</label>
-                <input type="text" class="form-control"  id="harga_obat" name="harga_obat">
+                <input type="text" class="form-control"  id="harga_obat" name="harga_obat" required>
             </div>
 
             <div class="mb-1">

@@ -16,6 +16,9 @@
         <a href="<?=base_url('/pelanggan/tambahpesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pemesanan</button></a>
   </li>
   <li class="nav-item">
+        <a href="<?=base_url('/pelanggan/riwayat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Riwayat</button></a>
+  </li>
+  <li class="nav-item">
         <a href="<?=base_url('/pelanggan/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Obat</button></a>
   </li>
 </ul>
@@ -33,7 +36,7 @@
   <?= csrf_field() ?>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Tanggal</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" value="<?= $date ?>" disabled>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="tanggal" value="<?= $date ?>" disabled>
   </div>
   <div class="mb-3">
     <label  class="form-label">Pemesan</label>
@@ -56,6 +59,8 @@
     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="<?= $obat['harga_obat']*$jumlah?>" disabled>
     <input type="hidden" name="harga" value="<?= $obat['harga_obat']*$jumlah?>">
   </div>
+
+  <input type="text" class="form-control" id="exampleFormControlInput1" value="berjalan" name="status" hidden>
 
   <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:10px; margin-bottom:30px;">Pesan</button>
 </form>

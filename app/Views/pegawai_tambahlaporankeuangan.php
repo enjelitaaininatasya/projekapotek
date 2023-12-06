@@ -46,17 +46,17 @@
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
-  <input type="date" class="form-control" id="tanggal" name="tanggal" >
+  <input type="date" class="form-control" id="tanggal" name="tanggal" required>
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Pemasukan</label>
-  <input type="text" class="form-control" id="pemasukan" name="pemasukan" >
+  <input type="text" class="form-control" id="pemasukan" name="pemasukan" required>
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Total</label>
-  <input type="text" class="form-control" id="total" name="total" >
+  <input type="text" class="form-control" id="total" name="total" required>
     </div>
 
     

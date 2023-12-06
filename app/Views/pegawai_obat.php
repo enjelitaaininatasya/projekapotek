@@ -37,7 +37,7 @@
     foreach ($obats as $obat){
     ?>
     
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:150px; border-radius:10px; margin-top:50px; margin-left:39px;">
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:180px; border-radius:10px; margin-top:50px; margin-left:39px;">
 
 <center><img src="<?=$obat['foto'] ?>" width="120px" alt=""></center>
 
@@ -50,12 +50,14 @@
     Rp.<?=$obat['harga_obat'] ?>
     <br>
     <br>
-    <a href="<?= base_url('/pegawai/editobat/' . $obat['id_obat']) ?>"><button class="btn" style="background-color : #C67C4E; color:white">EDIT</button></a>
-    <form action="<?= base_url('pegawai/delete/' . $obat['id_obat']) ?>" method="post">
+    <div style="display:flex; justify-content:center">
+    <a href="<?= base_url('/pegawai/editobat/' . $obat['id_obat']) ?>"><button class="btn" style="background-color : #C67C4E; color:white; padding: 6px 22px 5px 22px">EDIT</button></a>
+    <form action="<?= base_url('pegawai/delete/' . $obat['id_obat']) ?>" method="post" style="margin-left:10px">
                     <input type="hidden" name="_method" value="DELETE">
                     <?= csrf_field() ?>
                     <button type="submit" class="btn" style="background-color : #C67C4E; color:white">DELETE</button>
                 </form>
+    </div>
 </p>
 </center>
 </div>

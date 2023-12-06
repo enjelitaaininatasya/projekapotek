@@ -39,12 +39,24 @@ class PesananModel extends Model
     protected $afterDelete    = [];
 
     public function getPesanan(){
-        return $this->select('pesanan.*, obat.*, user.*')
+        return $this->select('pesanan.id_pesanan, pesanan.harga, pesanan.tanggal, pesanan.status, pesanan.jumlah, obat.nama_obat, users.username')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
-        ->join('user', 'user.id=pesanan.id_user')->findAll();    
+        ->join('users', 'users.id=pesanan.id_user')
+        ->orderBy('pesanan.status', 'DESC')->findAll();    
     }
 
     public function savePesanan($data){
         $this->insert($data);   
+    }
+
+    public function completePesanan($id){
+        $this->set('status', 'selesai')->where('id_pesanan', $id)->update();   
+    }
+
+    public function riwayatPesanan(){
+        return $this->select('pesanan.id_pesanan, pesanan.harga, pesanan.tanggal, pesanan.status, pesanan.jumlah, obat.nama_obat, users.username')
+        ->join('obat', 'obat.id_obat=pesanan.id_obat')
+        ->join('users', 'users.id=pesanan.id_user')
+        ->where('id_user', user_id())->findAll();  
     }
 }

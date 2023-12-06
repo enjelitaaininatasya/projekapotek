@@ -43,13 +43,18 @@
     <form action="<?= base_url('/pegawai/savedatatransaksi')?>" method="POST">
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">ID Pesanan</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" name="idpesanan">
+      <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">ID Pesanan</label>
+      <select class="form-select" aria-label="Default select example" name="idpesanan" required>
+        <?php foreach ($data as $data){
+          ?>
+        <option value="<?= $data['id_pesanan']?>"><?= $data['id_pesanan']?></option>
+        <?php } ?>
+     </select>
     </div>
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal">
+  <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal" required>
     </div>
 
     
