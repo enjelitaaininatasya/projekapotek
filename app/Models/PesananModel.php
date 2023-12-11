@@ -42,7 +42,7 @@ class PesananModel extends Model
         return $this->select('pesanan.id_pesanan, pesanan.harga, pesanan.tanggal, pesanan.status, pesanan.jumlah, obat.nama_obat, users.username')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
         ->join('users', 'users.id=pesanan.id_user')
-        ->orderBy('pesanan.status', 'DESC')->findAll();    
+        ->orderBy('pesanan.status', 'ASC')->findAll();    
     }
 
     public function savePesanan($data){

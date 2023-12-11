@@ -58,6 +58,7 @@ class DatatransaksiController extends BaseController
     public function storeAdmin()
     {
         $this->datatransaksiModel = new DatatransaksiModel();
+        $this->pesananModel = new PesananModel();
 
 
         $this->datatransaksiModel->saveData([
@@ -66,6 +67,9 @@ class DatatransaksiController extends BaseController
             
         ]);
 
+        $id = $this->request->getVar('idpesanan');
+        $this->pesananModel->completePesanan($id);
+
 
         return redirect()->to(base_url('/admin/datatransaksi'));
     }
@@ -73,6 +77,7 @@ class DatatransaksiController extends BaseController
     public function storePegawai()
     {
         $this->datatransaksiModel = new DatatransaksiModel();
+        $this->pesananModel = new PesananModel();
 
         $idpesanan = $this->request->getVar('idpesanan');
         $tanggal = $this->request->getVar('tanggal');
@@ -84,6 +89,9 @@ class DatatransaksiController extends BaseController
             ];
 
         $this->datatransaksiModel->saveData($data);
+
+        $id = $this->request->getVar('idpesanan');
+        $this->pesananModel->completePesanan($id);
         
         return redirect()->to(base_url('/pegawai/datatransaksi'));
     }

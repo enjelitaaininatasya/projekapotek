@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Edit Data Transaksi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body style="height: 100vh; 
@@ -48,6 +48,7 @@
 
 
 <div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787; background-color:#5d535e;">
+    
 <div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
     <h3 style="color:white">Ubah Data Transaksi</h3>
     <h6 style="color:white">ACS</h6>
@@ -60,27 +61,21 @@
     <input type="hidden" name="_method" value="PUT">
 
 
-    
     <div class="mb-1">
-      <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">ID Pesanan</span></label>
-      <select class="form-select" aria-label="Default select example" name="idpesanan" required>
-        <?php foreach ($pesanan as $pesanan){
-          ?>
-        <option value="<?= $pesanan['id_pesanan']?>"><?= $pesanan['id_pesanan']?></option>
-        <?php } ?>
-     </select>
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">ID Pesanan</span></label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="idpesanan" value="<?=$data['id_pesanan']?>">
     </div>
+
 
     <div class="mb-1">
   <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">Tanggal</span></label>
-  <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal" value="<?=$data['tanggal']?>" required>
+  <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal" value="<?=$data['tanggal']?>">
     </div>
 
 
 
 
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#dfe166; color:white; margin-top:30px; margin-bottom:30px; color:#5d535e">UBAH</button>
-  
+    <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#dfe166; color:white; margin-top:30px; margin-bottom:30px; color:#5d535e">UBAH</button>
 </div>
 
 </div>

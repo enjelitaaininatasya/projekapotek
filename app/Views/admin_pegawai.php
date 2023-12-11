@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Pegawai</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body style="background-color:#dfe166 ">
@@ -54,6 +54,7 @@
 <thead>
     <tr>
       <th scope="col" style="background-color:#5d535e; color:white">ID</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Email</th>
       <th scope="col" style="background-color:#5d535e; color:white">Nama</th>
       <th scope="col" style="background-color:#5d535e; color:white">Umur</th>
       <th scope="col" style="background-color:#5d535e; color:white">Telepon</th>
@@ -70,6 +71,7 @@ foreach ($pegawaii as $pegawai){
     <tr>
       
       <td style="background-color:#5d535e; color:white"><?=$pegawai['id']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pegawai['email']?></td>
       <td style="background-color:#5d535e; color:white"><?=$pegawai['username']?></td>
       <td style="background-color:#5d535e; color:white"><?=$pegawai['umur']?></td>
       <td style="background-color:#5d535e; color:white"><?=$pegawai['telepon']?></td>

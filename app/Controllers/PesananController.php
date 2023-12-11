@@ -88,12 +88,4 @@ class PesananController extends BaseController
         return view ("pelanggan_riwayat", $data);
     }
 
-    public function completeAdmin($id)
-    {
-        $this->pesananModel = new PesananModel();
-        $this->pesananModel->completePesanan($id);
-    
-        return redirect()->to(base_url('/admin/pesanan'));
-    }
-
 }

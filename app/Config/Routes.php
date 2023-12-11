@@ -77,7 +77,6 @@ $routes->get('/admin/turnpegawai/(:any)', [PelangganController::class, 'turnPega
 $routes->get('/admin/hapuspelanggan/(:any)', [PelangganController::class, 'destroy'], ['filter' => 'role:admin']);
 //admin pesanan
 $routes->get('/admin/pesanan', [PesananController::class, 'indexAdmin'], ['filter' => 'role:admin']);
-$routes->get('/admin/pesananselesai/(:any)', [PesananController::class, 'completeAdmin'], ['filter' => 'role:admin']);
 // admin data transaksi
 $routes->get('/admin/datatransaksi', [DatatransaksiController::class, 'indexAdmin'], ['filter' => 'role:admin']);
 $routes->get('/admin/tambahdatatransaksi', [DatatransaksiController::class, 'createAdmin'], ['filter' => 'role:admin']);
@@ -102,6 +101,7 @@ $routes->get('/pegawai/laporankeuangan', [LaporankeuanganController::class, 'ind
 $routes->get('/pegawai/tambahlaporankeuangan', [LaporankeuanganController::class, 'createPegawai'], ['filter' => 'role:pegawai']);
 $routes->post('/pegawai/savelaporankeuangan', [LaporankeuanganController::class, 'storePegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/pesanan', [PesananController::class, 'indexPegawai'], ['filter' => 'role:pegawai']);
+$routes->get('/pegawai/pesananselesai/(:any)', [PesananController::class, 'completePegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/pelanggan', [PelangganController::class, 'indexPegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/obat', [ObatController::class, 'indexPegawai'], ['filter' => 'role:pegawai']);
 $routes->get('/pegawai/tambahobat', [ObatController::class, 'createPegawai'], ['filter' => 'role:pegawai']);

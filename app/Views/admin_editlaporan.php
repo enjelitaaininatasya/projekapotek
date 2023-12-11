@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Edit Laporan Keuangan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body style="height: 100vh; 
-  background: linear-gradient( 170deg, #5d535e 50%, #dfe166 50%); ">
+  background: linear-gradient( 90deg, #dfe166 50%, #ffffff 50%); ">
 
-<nav style="box-shadow: 1px 2px 2px #333333" class="navbar navbar-expand-lg bg-#5d535e">
+<nav style="box-shadow: 1px 2px 2px #333333; background-color:#5d535e;" class="navbar navbar-expand-lg">
   <div class="container-fluid">
    <b> <a style="color:#ffffff" class="navbar-brand" href="#">ACS</a></b>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,11 +47,11 @@
 </nav>
 
 
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787">
-    
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; width:350px; margin:auto; border-radius:10px; margin-top:50px; box-shadow: 4px 5px 5px #878787; background-color:#5d535e;">
+   
 <div style="margin-bottom:20px; padding-left:23px; padding-right:23px;"> 
-    <h3>Ubah Laporan Keuangan</h3>
-    <h6>ACS</h6>
+    <h3 style="color:white">Ubah Laporan Keuangan</h3>
+    <h6 style="color:white">ACS</h6>
 </div>
 
 <div style="padding-left:23px; padding-right:23px;">
@@ -62,23 +62,23 @@
 
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Tanggal</label>
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">Tanggal</span></label>
   <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal" value="<?=$laporan['tanggal']?>" required>
     </div>
 
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Pemasukan</label>
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">Pemasukan</span></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" name="pemasukan" value="<?=$laporan['pemasukan']?>" required>
     </div>
 
     <div class="mb-1">
-  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label">Total</label>
+  <label for="exampleFormControlInput1" style="font-size:14px" class="form-label"><span style="color:white">Total</span></label>
   <input type="text" class="form-control" id="exampleFormControlInput1" name="total" value="<?=$laporan['total']?>" required>
     </div>
 
 
-  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#C67C4E; color:white; margin-top:30px; margin-bottom:30px;">Ubah</button>
+  <button type="submit" class="btn" style="border-radius:6px; padding-right:125px; padding-left:120px; background-color:#dfe166; color:white; margin-top:30px; margin-bottom:30px; color:#5d535e">UBAH</button>
   
 </div>
 
