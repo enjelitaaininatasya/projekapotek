@@ -53,7 +53,8 @@ class DatatransaksiModel extends Model
         return $this->select('datatransaksi.*, pesanan.jumlah, pesanan.harga, obat.*, users.*')
         ->join('pesanan', 'pesanan.id_pesanan=datatransaksi.id_pesanan')
         ->join('obat', 'obat.id_obat=pesanan.id_obat')
-        ->join('users', 'users.id=pesanan.id_user')->findAll(); 
+        ->join('users', 'users.id=pesanan.id_user')
+        ->orderBy('id_datatransaksi', 'ASC')->findAll(); 
     }
 
     public function updateData($data, $id){

@@ -3,45 +3,61 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Pesanan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body>
-<ul class="nav justify-content-center" style="margin-top:20px;">
-  <li class="nav-item">
-         <a href="<?=base_url('/pegawai/aboutus')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Tentang Kami</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/pegawai/pesanan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:black">Pemesanan</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/pegawai/datatransaksi')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Transaksi</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/pegawai/laporankeuangan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Laporan Keuangan</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/pegawai/pelanggan')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Pelanggan</button></a>
-  </li>
-  <li class="nav-item">
-        <a href="<?=base_url('/pegawai/obat')?>"><button type="button" class="btn" style="margin-right:25px; padding-left:40px; padding-right:40px; background-color : #C67C4E; color:white">Obat</button></a>
-  </li>
-</ul>
+<body style="background-color:#dfe166 ">
+
+<nav style="box-shadow: 1px 2px 2px #333333; background-color:#5d535e;" class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+   <b> <a style="color:#ffffff" class="navbar-brand" href="#">ACS</a></b>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a style="color:#ffffff" class="ms-5 nav-link active" aria-current="page" href="<?=base_url('/pegawai/aboutus')?>">Beranda </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#ffffff" class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/pegawai/pesanan')?>">Pesanan </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#ffffff" class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/pegawai/datatransaksi')?>">Data Transaksi </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#ffffff" class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/pegawai/laporankeuangan')?>">Laporan Keuangan </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#ffffff" class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/pegawai/pelanggan')?>">Pelanggan </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#ffffff"class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/pegawai/obat')?>">Obat </a>
+        </li>
+        <li class="nav-item">
+          <a style="color:#dfe166" class="ms-4 nav-link active" aria-current="page" href="<?=base_url('/logout')?>">Logout </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
-<div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px">
+<div style="outline-color:#878787; outline-style:solid; outline-width:1px; border-radius:10px; margin-top:50px; margin-right:100px; margin-left:100px; background-color:#5d535e">
 
-<center><h1>Pemesanan</h1></center>
+<center><h1 style="color:white">Pemesanan</h1></center>
 
 <table style="margin-top:50px" class="table">
 <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Tanggal</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Obat</th>
-      <th scope="col">Jumlah</th>
-      <th scope="col">Harga</th>
+      <th scope="col" style="background-color:#5d535e; color:white">ID</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Tanggal</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Nama</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Obat</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Jumlah</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Harga</th>
+      <th scope="col" style="background-color:#5d535e; color:white">Status</th>
+      <th style="background-color:#5d535e; color:white"></th>
     </tr>
   </thead>
   <tbody>
@@ -51,12 +67,14 @@ foreach ($pesanann as $pesanan){
     
     <tr>
       
-      <td><?=$pesanan['id_pesanan']?></td>
-      <td><?=$pesanan['tanggal']?></td>
-      <td><?=$pesanan['username']?></td>
-      <td><?=$pesanan['nama_obat']?></td>
-      <td><?=$pesanan['jumlah']?></td>
-      <td><?=$pesanan['harga']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['id_pesanan']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['tanggal']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['username']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['nama_obat']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['jumlah']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['harga']?></td>
+      <td style="background-color:#5d535e; color:white"><?=$pesanan['status']?></td>
+      <td style="background-color:#5d535e;"></td>
     </tr>
     <?php
 }
@@ -64,6 +82,7 @@ foreach ($pesanann as $pesanan){
     
   </tbody>
 </table>
+<br>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
